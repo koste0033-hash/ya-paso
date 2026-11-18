@@ -153,6 +153,41 @@
       max-width: 90vw; text-align: center;
       display: none;
     }
+
+    /* ---------- Lista de rutas de Tijuana ---------- */
+    #rutas {
+      margin-top: 20px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 4px 14px 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12);
+    }
+    #rutas summary {
+      font-size: 22px; font-weight: 800;
+      padding: 12px 0;
+      cursor: pointer;
+    }
+    #rutas .nota { font-size: 15px; color: #555; margin: 0 0 8px; }
+    #rutas h4 { font-size: 18px; margin: 14px 0 6px; }
+    .ruta-btn {
+      display: flex; align-items: center; gap: 10px;
+      width: 100%;
+      text-align: left;
+      font-size: 17px;
+      padding: 12px;
+      margin-bottom: 6px;
+      border: 2px solid #eee;
+      border-radius: 12px;
+      background: #fafafa;
+      color: #222;
+    }
+    .ruta-btn .color {
+      flex: 0 0 auto;
+      font-size: 13px; font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 8px;
+      background: #eee;
+    }
   </style>
 </head>
 <body>
@@ -167,6 +202,12 @@
   <main>
     <h2>Últimos reportes</h2>
     <ul id="lista"></ul>
+
+    <details id="rutas">
+      <summary>🚕 Rutas de Tijuana</summary>
+      <p class="nota">Toca una ruta para reportarla. ¿Falta la tuya? Escríbela tú al reportar.</p>
+      <div id="listaRutas"></div>
+    </details>
   </main>
 
   <button id="btnReportar">📢 Reportar</button>
@@ -178,7 +219,8 @@
       <div class="opciones" id="opciones"></div>
 
       <label for="ruta">Ruta</label>
-      <input id="ruta" type="text" placeholder="Ej. Calafia Centro–Florido" maxlength="60" autocomplete="off">
+      <input id="ruta" type="text" list="sugerencias" placeholder="Escribe o elige tu ruta" maxlength="80" autocomplete="off">
+      <datalist id="sugerencias"></datalist>
 
       <label for="pago">¿Cuánto pagaste? (opcional)</label>
       <input id="pago" type="number" inputmode="decimal" placeholder="Ej. 15" min="0" max="999" step="0.5">
@@ -205,6 +247,50 @@
       paro:  { emoji: "🔴", texto: "No pasa / Paro",      color: "#c62828" },
       cobro: { emoji: "💰", texto: "Cobro de más",        color: "#6a1b9a" }
     };
+
+    // Rutas conocidas de Tijuana (lista inicial; se puede ir completando).
+    // "color" es como se reconoce el taxi en la calle.
+    const RUTAS = [
+      { grupo: "🚕 Taxis de ruta (colectivos)", rutas: [
+        { color: "Amarillo y blanco",        nombre: "Centro – Playas" },
+        { color: "Amarillo y crema",         nombre: "Centro – Rosarito" },
+        { color: "Blanco y amarillo",        nombre: "La Gloria – Rosarito" },
+        { color: "Verde y crema",            nombre: "Otay Universidad – 5 y 10 – Rosarito" },
+        { color: "Oro y blanco",             nombre: "Postal – Buena Vista – Zona Río – Otay – UABC" },
+        { color: "Azul y blanco",            nombre: "Centro – Altamira – Francisco Villa" },
+        { color: "Naranja y blanco",         nombre: "Col. Hidalgo – Obrera" },
+        { color: "Crema con franja café",    nombre: "Flamingos" },
+        { color: "Rojo con franja blanca",   nombre: "Centro – Pinos – Presa" },
+        { color: "Blanco y azul",            nombre: "COMAR" },
+        { color: "Blanco y morado",          nombre: "Garita San Ysidro" },
+        { color: "Rojo y negro",             nombre: "5 y 10 – El Laurel" },
+        { color: "Rojo y negro",             nombre: "Durango – Centro" }
+      ]},
+      { grupo: "🚌 Calafias", rutas: [
+        { color: "Calafia", nombre: "Centro – Florido" },
+        { color: "Calafia", nombre: "5 y 10 – Valle Verde" },
+        { color: "Calafia", nombre: "5 y 10 – Altiplano" },
+        { color: "Calafia", nombre: "5 y 10 – Buenos Aires Norte – Jardín Dorado" },
+        { color: "Calafia", nombre: "5 y 10 – Pípila – Real de San Francisco" },
+        { color: "Calafia", nombre: "5 y 10 – Villas de BC" },
+        { color: "Calafia", nombre: "5 y 10 – Natura" },
+        { color: "Calafia", nombre: "5 y 10 – El Laurel I" }
+      ]},
+      { grupo: "🚍 SITT", rutas: [
+        { color: "SITT", nombre: "Ruta Troncal (Insurgentes)" },
+        { color: "SITT", nombre: "Alimentadora Terrazas – Ojo de Agua" },
+        { color: "SITT", nombre: "Alimentadora La Morita" },
+        { color: "SITT", nombre: "Alimentadora Villa del Prado" },
+        { color: "SITT", nombre: "Alimentadora Natura" },
+        { color: "SITT", nombre: "Alimentadora Garita de Otay" }
+      ]}
+    ];
+
+    // Texto completo de una ruta, ej. "Taxi Azul y blanco: Centro – Altamira – Francisco Villa"
+    function textoRuta(r) {
+      if (r.color === "Calafia" || r.color === "SITT") return r.color + " " + r.nombre;
+      return "Taxi " + r.color + ": " + r.nombre;
+    }
 
     const UNA_HORA = 60 * 60 * 1000;          // los reportes duran 1 hora
     const CLAVE = "yapaso_reportes";          // nombre donde se guardan en el navegador
@@ -357,11 +443,36 @@
       cajaOpciones.appendChild(b);
     });
 
-    function abrirVentana() {
+    // Llenar las sugerencias del campo "Ruta" y la sección "Rutas de Tijuana"
+    const sugerencias = document.getElementById("sugerencias");
+    const listaRutas = document.getElementById("listaRutas");
+    RUTAS.forEach(g => {
+      const titulo = document.createElement("h4");
+      titulo.textContent = g.grupo;
+      listaRutas.appendChild(titulo);
+      g.rutas.forEach(r => {
+        const texto = textoRuta(r);
+        const opt = document.createElement("option");
+        opt.value = texto;
+        sugerencias.appendChild(opt);
+
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "ruta-btn";
+        b.innerHTML = `<span class="color"></span><span class="nombre"></span>`;
+        b.querySelector(".color").textContent = r.color;
+        b.querySelector(".nombre").textContent = r.nombre;
+        b.addEventListener("click", () => abrirVentana(texto));
+        listaRutas.appendChild(b);
+      });
+    });
+
+    function abrirVentana(rutaElegida) {
       tipoElegido = null;
       document.querySelectorAll(".opcion").forEach(x => x.classList.remove("elegida"));
       inputPago.value = "";
-      inputRuta.value = localStorage.getItem("yapaso_ultima_ruta") || "";
+      inputRuta.value = (typeof rutaElegida === "string" && rutaElegida)
+        || localStorage.getItem("yapaso_ultima_ruta") || "";
       error.textContent = "";
       btnEnviar.disabled = false;
       btnEnviar.textContent = "Enviar";
