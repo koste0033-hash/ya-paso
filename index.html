@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#6a1b9a">
+  <title>¿Ya Pasó? · Transporte de Tijuana en vivo</title>
+
+  <!-- Leaflet: la librería del mapa (gratis) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #fff8e1;
+      color: #222;
+      font-size: 18px;
+    }
+
+    /* ---------- Encabezado con el logo ---------- */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: linear-gradient(90deg, #6a1b9a, #e91e63);
+      color: #fff;
+      padding: 12px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .logo {
+      margin: 0;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+    .logo span { color: #ffeb3b; }
+    .sub { margin: 2px 0 0; font-size: 15px; opacity: .9; }
+
+    /* ---------- Mapa ---------- */
+    #mapa {
+      height: 52vh;
+      min-height: 280px;
+      width: 100%;
+    }
+    .pin {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    .leaflet-popup-content { font-size: 16px; }
+
+    /* ---------- Lista de reportes ---------- */
+    main { padding: 16px 16px 130px; }
+    h2 { font-size: 22px; margin: 4px 0 12px; }
+    #lista { list-style: none; padding: 0; margin: 0; }
+    .reporte {
+      display: flex; gap: 12px; align-items: center;
+      background: #fff;
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12);
+      border-left: 8px solid #ccc;
+      cursor: pointer;
+    }
+    .reporte .emoji { font-size: 34px; }
+    .reporte .txt { flex: 1; }
+    .reporte .estado { font-weight: 800; font-size: 19px; }
+    .reporte .ruta { font-size: 17px; }
+    .reporte .hace { font-size: 15px; color: #666; }
+    .vacio {
+      text-align: center; color: #666; padding: 20px;
+      background: #fff; border-radius: 16px;
+    }
+
+    /* ---------- Botón grande "Reportar" ---------- */
+    #btnReportar {
+      position: fixed; z-index: 1000;
+      left: 16px; right: 16px;
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      height: 76px;
+      border: none; border-radius: 40px;
+      background: #ff5722;
+      color: #fff;
+      font-size: 28px; font-weight: 900;
+      box-shadow: 0 6px 16px rgba(255,87,34,.5);
+    }
+    #btnReportar:active { transform: scale(.97); }
+
+    /* ---------- Ventana para reportar ---------- */
+    #fondo {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.55);
+      display: none;
+      align-items: flex-end;
+    }
+    #fondo.abierto { display: flex; }
+    #ventana {
+      background: #fff;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      border-radius: 24px 24px 0 0;
+      padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
+    }
+    #ventana h3 { font-size: 24px; margin: 0 0 12px; text-align: center; }
+    .opciones { display: grid; gap: 10px; }
+    .opcion {
+      display: flex; align-items: center; gap: 12px;
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 21px; font-weight: 700;
+      border: 4px solid transparent;
+      border-radius: 16px;
+      background: #f2f2f2;
+      text-align: left;
+      color: #222;
+    }
+    .opcion .emoji { font-size: 30px; }
+    .opcion.elegida { border-color: #222; background: #fffde7; }
+    label { display: block; font-weight: 700; margin: 16px 0 6px; font-size: 19px; }
+    input {
+      width: 100%;
+      font-size: 20px;
+      padding: 14px;
+      border: 2px solid #bbb;
+      border-radius: 12px;
+    }
+    .botones { display: flex; gap: 10px; margin-top: 18px; }
+    .botones button {
+      flex: 1; height: 64px;
+      border: none; border-radius: 32px;
+      font-size: 21px; font-weight: 800;
+    }
+    #btnCancelar { background: #e0e0e0; color: #222; }
+    #btnEnviar { background: #2e7d32; color: #fff; }
+    #btnEnviar:disabled { background: #a5d6a7; }
+    #error { color: #c62828; font-weight: 700; min-height: 1.2em; margin: 10px 0 0; }
+
+    /* ---------- Aviso flotante ---------- */
+    #aviso {
+      position: fixed; z-index: 3000;
+      left: 50%; top: 90px;
+      transform: translateX(-50%);
+      background: #222; color: #fff;
+      padding: 12px 20px; border-radius: 24px;
+      font-size: 17px; font-weight: 700;
+      max-width: 90vw; text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="logo">¿Ya <span>Pasó</span>?</h1>
+    <p class="sub">El transporte de Tijuana, en vivo 🚌</p>
+  </header>
+
+  <div id="mapa"></div>
+
+  <main>
+    <h2>Últimos reportes</h2>
+    <ul id="lista"></ul>
+  </main>
+
+  <button id="btnReportar">📢 Reportar</button>
+
+  <!-- Ventana para hacer un reporte -->
+  <div id="fondo">
+    <div id="ventana" role="dialog" aria-modal="true" aria-labelledby="tituloVentana">
+      <h3 id="tituloVentana">¿Cómo está el transporte?</h3>
+      <div class="opciones" id="opciones"></div>
+
+      <label for="ruta">Ruta</label>
+      <input id="ruta" type="text" placeholder="Ej. Calafia Centro–Florido" maxlength="60" autocomplete="off">
+
+      <label for="pago">¿Cuánto pagaste? (opcional)</label>
+      <input id="pago" type="number" inputmode="decimal" placeholder="Ej. 15" min="0" max="999" step="0.5">
+
+      <p id="error"></p>
+
+      <div class="botones">
+        <button id="btnCancelar">Cancelar</button>
+        <button id="btnEnviar">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="aviso"></div>
+
+  <script>
+    // ================== CONFIGURACIÓN ==================
+
+    // Las 5 opciones que puede elegir la gente
+    const OPCIONES = {
+      bien:  { emoji: "🟢", texto: "Ya pasó / Todo bien", color: "#2e7d32" },
+      fila:  { emoji: "🟡", texto: "Fila larga",          color: "#f9a825" },
+      lleno: { emoji: "🟠", texto: "Camión lleno",        color: "#ef6c00" },
+      paro:  { emoji: "🔴", texto: "No pasa / Paro",      color: "#c62828" },
+      cobro: { emoji: "💰", texto: "Cobro de más",        color: "#6a1b9a" }
+    };
+
+    const UNA_HORA = 60 * 60 * 1000;          // los reportes duran 1 hora
+    const CLAVE = "yapaso_reportes";          // nombre donde se guardan en el navegador
+    const TIJUANA = [32.5149, -117.0382];     // centro de Tijuana
+
+    // ================== MAPA ==================
+
+    // Si el mapa no carga (mala señal), la app sigue funcionando con la lista
+    const hayMapa = typeof L !== "undefined";
+    let mapa = null, capaReportes = null;
+    if (hayMapa) {
+      mapa = L.map("mapa").setView(TIJUANA, 12);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap"
+      }).addTo(mapa);
+      capaReportes = L.layerGroup().addTo(mapa);
+    } else {
+      const div = document.getElementById("mapa");
+      div.style.cssText = "height:auto;min-height:0;padding:16px;text-align:center;font-weight:700;background:#ffe0b2";
+      div.textContent = "🗺️ No se pudo cargar el mapa (revisa tu internet). Puedes reportar y ver la lista igual.";
+    }
+
+    // ================== GUARDAR / LEER REPORTES ==================
+
+    function leerReportes() {
+      try {
+        const datos = JSON.parse(localStorage.getItem(CLAVE)) || [];
+        const ahora = Date.now();
+        // Quitar los que ya tienen más de 1 hora (y cualquier dato raro)
+        return datos.filter(r => OPCIONES[r.tipo] && ahora - r.hora < UNA_HORA);
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function guardarReportes(lista) {
+      localStorage.setItem(CLAVE, JSON.stringify(lista));
+    }
+
+    // ================== UTILIDADES ==================
+
+    // Evita que alguien meta código raro en el nombre de la ruta
+    function limpiar(texto) {
+      const div = document.createElement("div");
+      div.textContent = texto;
+      return div.innerHTML;
+    }
+
+    function haceCuanto(hora) {
+      const min = Math.floor((Date.now() - hora) / 60000);
+      if (min < 1) return "hace un momento";
+      if (min === 1) return "hace 1 min";
+      return "hace " + min + " min";
+    }
+
+    function aviso(texto) {
+      const el = document.getElementById("aviso");
+      el.textContent = texto;
+      el.style.display = "block";
+      clearTimeout(aviso.t);
+      aviso.t = setTimeout(() => el.style.display = "none", 3000);
+    }
+
+    // ================== DIBUJAR MAPA Y LISTA ==================
+
+    let marcadores = {};
+
+    function dibujar() {
+      const reportes = leerReportes();
+      guardarReportes(reportes); // guarda la lista ya sin los viejos
+
+      // --- Mapa ---
+      marcadores = {};
+      if (hayMapa) capaReportes.clearLayers();
+      if (hayMapa) reportes.forEach(r => {
+        const op = OPCIONES[r.tipo];
+        const icono = L.divIcon({
+          className: "",
+          html: `<div class="pin" style="background:${op.color}">${op.emoji}</div>`,
+          iconSize: [44, 44],
+          iconAnchor: [22, 22]
+        });
+        let detalle = `<b>${op.emoji} ${op.texto}</b><br>🚌 ${limpiar(r.ruta)}`;
+        if (r.pago) detalle += `<br>💵 Pagó $${limpiar(String(r.pago))}`;
+        detalle += `<br><small>${haceCuanto(r.hora)}</small>`;
+        marcadores[r.id] = L.marker([r.lat, r.lng], { icon: icono })
+          .bindPopup(detalle)
+          .addTo(capaReportes);
+      });
+
+      // --- Lista (más nuevos primero) ---
+      const lista = document.getElementById("lista");
+      if (reportes.length === 0) {
+        lista.innerHTML = `<li class="vacio">Todavía no hay reportes.<br>¡Sé el primero en reportar! 🙌</li>`;
+        return;
+      }
+      lista.innerHTML = reportes
+        .slice()
+        .sort((a, b) => b.hora - a.hora)
+        .map(r => {
+          const op = OPCIONES[r.tipo];
+          const pago = r.pago ? ` · 💵 $${limpiar(String(r.pago))}` : "";
+          return `
+            <li class="reporte" data-id="${limpiar(r.id)}" style="border-left-color:${op.color}">
+              <div class="emoji">${op.emoji}</div>
+              <div class="txt">
+                <div class="estado">${op.texto}</div>
+                <div class="ruta">🚌 ${limpiar(r.ruta)}${pago}</div>
+                <div class="hace">${haceCuanto(r.hora)}</div>
+              </div>
+            </li>`;
+        }).join("");
+    }
+
+    // Tocar un reporte de la lista te lleva a él en el mapa
+    document.getElementById("lista").addEventListener("click", e => {
+      const item = e.target.closest(".reporte");
+      if (!item) return;
+      const m = marcadores[item.dataset.id];
+      if (!m) return;
+      mapa.setView(m.getLatLng(), 16);
+      m.openPopup();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // ================== VENTANA DE REPORTE ==================
+
+    const fondo = document.getElementById("fondo");
+    const cajaOpciones = document.getElementById("opciones");
+    const inputRuta = document.getElementById("ruta");
+    const inputPago = document.getElementById("pago");
+    const error = document.getElementById("error");
+    const btnEnviar = document.getElementById("btnEnviar");
+    let tipoElegido = null;
+
+    // Crear los 5 botones de opciones
+    Object.entries(OPCIONES).forEach(([clave, op]) => {
+      const b = document.createElement("button");
+      b.className = "opcion";
+      b.type = "button";
+      b.dataset.tipo = clave;
+      b.innerHTML = `<span class="emoji">${op.emoji}</span> ${op.texto}`;
+      b.addEventListener("click", () => {
+        tipoElegido = clave;
+        document.querySelectorAll(".opcion").forEach(x => x.classList.remove("elegida"));
+        b.classList.add("elegida");
+        error.textContent = "";
+      });
+      cajaOpciones.appendChild(b);
+    });
+
+    function abrirVentana() {
+      tipoElegido = null;
+      document.querySelectorAll(".opcion").forEach(x => x.classList.remove("elegida"));
+      inputPago.value = "";
+      inputRuta.value = localStorage.getItem("yapaso_ultima_ruta") || "";
+      error.textContent = "";
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = "Enviar";
+      fondo.classList.add("abierto");
+    }
+
+    function cerrarVentana() {
+      fondo.classList.remove("abierto");
+    }
+
+    document.getElementById("btnReportar").addEventListener("click", abrirVentana);
+    document.getElementById("btnCancelar").addEventListener("click", cerrarVentana);
+    fondo.addEventListener("click", e => { if (e.target === fondo) cerrarVentana(); });
+
+    // Pedir la ubicación del usuario
+    function obtenerUbicacion() {
+      return new Promise((resolver, rechazar) => {
+        if (!navigator.geolocation) return rechazar(new Error("sin-gps"));
+        navigator.geolocation.getCurrentPosition(
+          pos => resolver([pos.coords.latitude, pos.coords.longitude]),
+          err => rechazar(err),
+          { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }
+        );
+      });
+    }
+
+    btnEnviar.addEventListener("click", async () => {
+      const ruta = inputRuta.value.trim();
+      const pago = inputPago.value.trim();
+
+      if (!tipoElegido) { error.textContent = "👆 Elige una opción"; return; }
+      if (!ruta)        { error.textContent = "✏️ Escribe el nombre de la ruta"; inputRuta.focus(); return; }
+
+      btnEnviar.disabled = true;
+      btnEnviar.textContent = "Ubicando… 📍";
+
+      let lugar;
+      try {
+        lugar = await obtenerUbicacion();
+      } catch (e) {
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = "Enviar";
+        error.textContent = "📍 Necesitamos tu ubicación para poner el reporte en el mapa. Activa el permiso de ubicación e inténtalo otra vez.";
+        return;
+      }
+
+      const reporte = {
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+        tipo: tipoElegido,
+        ruta: ruta,
+        pago: pago ? Number(pago) : null,
+        lat: lugar[0],
+        lng: lugar[1],
+        hora: Date.now()
+      };
+
+      const reportes = leerReportes();
+      reportes.push(reporte);
+      guardarReportes(reportes);
+      localStorage.setItem("yapaso_ultima_ruta", ruta);
+
+      cerrarVentana();
+      dibujar();
+      if (hayMapa) {
+        mapa.setView(lugar, 16);
+        marcadores[reporte.id].openPopup();
+      }
+      aviso("¡Gracias por reportar! 🙌");
+    });
+
+    // ================== ARRANQUE ==================
+
+    dibujar();
+    // Cada 30 segundos: actualizar "hace X min" y borrar los reportes viejos
+    setInterval(dibujar, 30000);
+  </script>
+</body>
+</html>
