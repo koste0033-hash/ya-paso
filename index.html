@@ -167,7 +167,32 @@
       padding: 12px 0;
       cursor: pointer;
     }
-    #rutas .nota { font-size: 15px; color: #555; margin: 0 0 8px; }
+    #rutas .nota, .caja .nota { font-size: 15px; color: #555; margin: 0 0 8px; }
+    #trazos {
+      margin-top: 20px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 4px 14px 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12);
+    }
+    #trazos summary { font-size: 22px; font-weight: 800; padding: 12px 0; cursor: pointer; }
+    .btn-grande {
+      width: 100%; height: 56px;
+      border: none; border-radius: 28px;
+      background: #1565c0; color: #fff;
+      font-size: 19px; font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .btn-grande.gris { background: #e0e0e0; color: #222; }
+    #selRuta {
+      width: 100%;
+      font-size: 18px;
+      padding: 12px;
+      border: 2px solid #bbb;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
     #rutas h4 { font-size: 18px; margin: 14px 0 6px; }
     .ruta-btn {
       display: flex; align-items: center; gap: 10px;
@@ -203,7 +228,16 @@
     <h2>Últimos reportes</h2>
     <ul id="lista"></ul>
 
-    <details id="rutas">
+    <details id="trazos" class="caja">
+      <summary>🗺️ Ver rutas en el mapa</summary>
+      <p class="nota">Trazos de OpenStreetMap, un mapa que hace la comunidad. Puede que no estén todas las rutas.</p>
+      <button type="button" id="btnCargarRutas" class="btn-grande">Cargar rutas</button>
+      <select id="selRuta" hidden></select>
+      <button type="button" id="btnQuitarRuta" class="btn-grande gris" hidden>Quitar ruta del mapa</button>
+      <p id="estadoRutas" class="nota"></p>
+    </details>
+
+    <details id="rutas" class="caja">
       <summary>🚕 Rutas de Tijuana</summary>
       <p class="nota">Toca una ruta para reportarla. ¿Falta la tuya? Escríbela tú al reportar.</p>
       <div id="listaRutas"></div>
@@ -541,6 +575,99 @@
         marcadores[reporte.id].openPopup();
       }
       aviso("¡Gracias por reportar! 🙌");
+    });
+
+    // ================== TRAZOS DE RUTAS (OpenStreetMap) ==================
+    // El celular le pregunta a OpenStreetMap (Overpass) qué rutas de transporte
+    // tiene registradas en Tijuana, y dibuja la que elijas.
+
+    const OVERPASS = "https://overpass-api.de/api/interpreter";
+    const ZONA_TJ = "32.38,-117.13,32.57,-116.83"; // rectángulo de Tijuana
+    const btnCargar = document.getElementById("btnCargarRutas");
+    const selRuta = document.getElementById("selRuta");
+    const btnQuitar = document.getElementById("btnQuitarRuta");
+    const estadoRutas = document.getElementById("estadoRutas");
+    let capaTrazo = null;
+
+    async function preguntarOSM(consulta) {
+      const resp = await fetch(OVERPASS, {
+        method: "POST",
+        body: "data=" + encodeURIComponent(consulta),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" }
+      });
+      if (!resp.ok) throw new Error("osm-" + resp.status);
+      return resp.json();
+    }
+
+    btnCargar.addEventListener("click", async () => {
+      if (!hayMapa) { estadoRutas.textContent = "Primero debe cargar el mapa."; return; }
+      btnCargar.disabled = true;
+      estadoRutas.textContent = "Buscando rutas… ⏳";
+      try {
+        const datos = await preguntarOSM(
+          `[out:json][timeout:30];relation["route"~"^(bus|share_taxi|minibus|trolleybus)$"](${ZONA_TJ});out tags;`
+        );
+        const rutas = datos.elements
+          .map(e => ({ id: e.id, nombre: e.tags.name || e.tags.ref || ("Ruta " + e.id), color: e.tags.colour }))
+          .sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
+        if (rutas.length === 0) {
+          estadoRutas.textContent = "OpenStreetMap todavía no tiene rutas de Tijuana. 😕";
+          btnCargar.disabled = false;
+          return;
+        }
+        selRuta.innerHTML = `<option value="">— Elige una ruta (${rutas.length}) —</option>`;
+        rutas.forEach(r => {
+          const o = document.createElement("option");
+          o.value = r.id;
+          o.textContent = r.nombre;
+          o.dataset.color = r.color || "";
+          selRuta.appendChild(o);
+        });
+        selRuta.hidden = false;
+        btnCargar.hidden = true;
+        estadoRutas.textContent = "";
+      } catch (e) {
+        estadoRutas.textContent = "No se pudieron cargar las rutas. Revisa tu internet e intenta otra vez.";
+        btnCargar.disabled = false;
+      }
+    });
+
+    selRuta.addEventListener("change", async () => {
+      const id = selRuta.value;
+      if (!id) return;
+      estadoRutas.textContent = "Dibujando ruta… ⏳";
+      try {
+        const datos = await preguntarOSM(`[out:json][timeout:30];relation(${Number(id)});out geom;`);
+        const rel = datos.elements[0];
+        // Solo las calles del recorrido (no las paradas)
+        const lineas = (rel && rel.members || [])
+          .filter(m => m.type === "way" && m.geometry && !/stop|platform/.test(m.role))
+          .map(m => m.geometry.map(p => [p.lat, p.lon]));
+        if (lineas.length === 0) {
+          estadoRutas.textContent = "Esta ruta no tiene trazo en OpenStreetMap.";
+          return;
+        }
+        const opcion = selRuta.selectedOptions[0];
+        const color = /^#?[0-9a-fA-F]{3,6}$/.test(opcion.dataset.color)
+          ? (opcion.dataset.color.startsWith("#") ? "" : "#") + opcion.dataset.color
+          : "#1565c0";
+        if (capaTrazo) capaTrazo.remove();
+        capaTrazo = L.polyline(lineas, { color, weight: 6, opacity: 0.8 }).addTo(mapa);
+        mapa.fitBounds(capaTrazo.getBounds(), { padding: [20, 20] });
+        btnQuitar.hidden = false;
+        estadoRutas.textContent = "✅ " + opcion.textContent;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } catch (e) {
+        estadoRutas.textContent = "No se pudo dibujar la ruta. Intenta otra vez.";
+      }
+    });
+
+    btnQuitar.addEventListener("click", () => {
+      if (capaTrazo) capaTrazo.remove();
+      capaTrazo = null;
+      selRuta.value = "";
+      btnQuitar.hidden = true;
+      estadoRutas.textContent = "";
     });
 
     // ================== ARRANQUE ==================
