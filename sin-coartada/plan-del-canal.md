@@ -93,6 +93,11 @@ Ya están escritos en [guiones.md](guiones.md) el video largo #11 y los Shorts #
   - Guion de unas 130 palabras: así la narración queda en menos de 60 segundos sin acelerarla.
   - Es voz de IA: márcalo como contenido sintético en YouTube Studio.
   - En ElevenLabs también está guardada en el **Brand Kit "Sin Coartada"** (id `u2hc06Fn1eWnrAdo5wfA`), junto con el logo, la paleta de colores y las reglas de estilo.
+- **Cómo producir barato** (Short #4 en adelante, unos 3,000 créditos en vez de 8,000):
+  - Imágenes con `gpt-image-2` en calidad **low**: 34 créditos sin referencia, unos 250 con la portada como referencia (contra 420 a 700 en medium o high). Se ve casi igual.
+  - **Una sola** portada y **una sola** toma de narración; repetir solo si algo sale mal.
+  - Si una escena sale con espacio vacío, se arregla gratis recortándola, sin volver a generarla.
+  - La transcripción para los subtítulos no cuesta créditos.
 - **Imágenes:** ilustraciones tipo cómic generadas con IA, en el mismo estilo siempre. No uses fotos reales de víctimas ni de escenas del crimen.
 - **Plantilla de Short (60 s):**
   1. **0–2 s, gancho:** el dato más absurdo ("Se cubrió la cara con jugo de limón para robar un banco").

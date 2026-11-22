@@ -14,7 +14,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 | # | Título | Caso | Estado |
 |---|---|---|---|
 | 1 | Robaron las joyas de la corona del Louvre en 7 minutos… con un elevador de mudanzas | Museo del Louvre, París, 2025 | |
-| 2 | Dejaron una nota en la bóveda: "sin armas ni rencores"… y escaparon por las alcantarillas | Banco Río de Acassuso, Argentina, 2006 | |
+| 2 | Dejaron una nota en la bóveda: "sin armas ni rencores"… y escaparon por las alcantarillas | Banco Río de Acassuso, Argentina, 2006 | 🎬 |
 | 3 | Abrieron una tienda de pasto artificial… para cavar un túnel hasta el banco | Banco Central de Fortaleza, Brasil, 2005 | |
 | 4 | Robaron 100 millones en diamantes… y los delató una bolsa de basura | Centro de Diamantes de Amberes, Bélgica, 2003 | 📝 |
 | 5 | Se robaron más de 100 piezas del Museo de Antropología en Navidad… y eran dos estudiantes | Museo Nacional de Antropología, CDMX, 1985 | 📝 |
