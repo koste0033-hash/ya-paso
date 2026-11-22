@@ -31,9 +31,34 @@ Sale de revisar los Shorts más vistos de canales del mismo formato (más de un 
 - Anunciar en vez de contar ("Esta historia te va a sorprender").
 - Gancho y portada que dicen cosas distintas.
 
-### Portada (primer cuadro del Short)
+### Portada (primer cuadro del Short) · formato v2
 
-Ilustración del momento más absurdo, con 2 o 3 palabras en mayúsculas amarillas y borde negro arriba ("¡JUGO DE LIMÓN!"), y un sello rojo "CASO CERRADO" o "SIN RESOLVER".
+Inspirado en Comandante Porqué. Primera versión: el Short #4 (Banco Río).
+
+- **Un solo personaje, grande**, en primer plano, con una cara muy expresiva (guiño, sorpresa, culpa) y **el objeto clave junto a la cara** (la pistola de juguete, el limón, el frasco).
+- **Fondo liso y brillante**: un color fuerte (rojo, amarillo, azul) con rayos simples. Nada más en el fondo.
+- **La pregunta del título arriba**, en 2 renglones, en blanco con borde negro grueso y **la palabra clave en amarillo** ("¿POR QUÉ CON PISTOLAS DE **JUGUETE**?").
+- **Sin sello ni texto extra.** El sello CASO CERRADO / SIN RESOLVER va en la escena final.
+- Revisa que se entienda **en miniatura** (al 10% de su tamaño).
+
+Prompt base (gpt-image-2, calidad low, con la portada anterior como referencia del personaje): *"Minimal, bold, very clean flat cartoon style… ONE single character as a huge close-up… plain bright high-contrast background… huge bold white lettering with thick black outline… with the word X in bright yellow. No other text."*
+
+### Estructura del guion para retener (≈140 palabras, 55–65 s)
+
+| Segundos | Qué pasa | Ejemplo (Banco Río) |
+|---|---|---|
+| 0–6 | **La pregunta del título, palabra por palabra.** Coincide con la portada. | "¿Por qué unos ladrones asaltaron un banco con pistolas de juguete… y aun así se salieron con la suya?" |
+| 6–16 | **Contexto en una línea + primera contradicción.** | "Parecen empresarios. Pero sus armas… son de plástico." |
+| 16–30 | **Giro cada 5 o 6 s.** Frases cortas; "pero", "porque", "mientras". | "Pide tiempo… y la policía se lo da. Porque mientras él hablaba…" |
+| 30–45 | **La sorpresa grande.** | "Los comandos entran. Y no hay nadie." |
+| 45–55 | **Cerrar lo que quedó pendiente** (algo que se mencionó al inicio y no se explicó). | "Pero antes de irse, dejaron su firma. La nota decía…" |
+| 55–60 | **Pregunta para comentar.** | "¿Tú los habrías atrapado?" |
+
+Reglas:
+- **Dejar algo pendiente desde el principio** y resolverlo al final (la nota, el error, el nombre del culpable). Es lo que hace que la gente no deslice.
+- **Nunca decir el final en los primeros 10 segundos.**
+- **Un cambio de imagen cada 2 o 3 s:** en `escenas.json` pon `"cortes_rapidos": true` y `"whoosh": true`. `montar.py` parte cada escena en tomas con encuadres distintos, sin gastar créditos.
+- **Etiquetas de voz** para cambiar el ritmo: `[whispering]` antes del secreto y `[serious]` antes de la sorpresa.
 
 ---
 
