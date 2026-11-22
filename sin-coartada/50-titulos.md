@@ -5,7 +5,7 @@ Cada título sirve como **título del Short y como primera frase de la narració
 
 Antes de escribir cada guion, confirma las cifras en dos fuentes. Las de esta lista son las que más se repiten en la prensa y pueden variar un poco según la fuente.
 
-Estado: ✅ publicado · 📝 guion listo · (vacío) pendiente
+Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vacío) pendiente
 
 ---
 
@@ -30,7 +30,7 @@ Estado: ✅ publicado · 📝 guion listo · (vacío) pendiente
 
 | # | Título | Caso | Estado |
 |---|---|---|---|
-| 13 | Vendió la Torre Eiffel como chatarra… y lo intentó dos veces | Victor Lustig, París, 1925 | 📝 |
+| 13 | Vendió la Torre Eiffel como chatarra… y lo intentó dos veces | Victor Lustig, París, 1925 | 🎬 |
 | 14 | Inventó un país que no existía… y vendió terrenos ahí | Gregor MacGregor y "Poyais", 1820s | |
 | 15 | Le vendió un Vermeer falso a un líder nazi… y tuvo que pintar otro para salvarse | Han van Meegeren, Países Bajos, 1945 | |
 | 16 | Una revista pagó millones por los diarios secretos de Hitler… y los había escrito un falsificador | Diarios de Hitler, Alemania, 1983 | |
