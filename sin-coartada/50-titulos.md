@@ -49,7 +49,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 |---|---|---|---|
 | 25 | Robó dos bancos sin máscara… porque creyó que el jugo de limón lo hacía invisible | McArthur Wheeler, Pittsburgh, 1995 | ✅ |
 | 26 | Entró a robar una casa… y dejó abierto su Facebook en la computadora | Jonathan Parker, Virginia Occidental, 2009 | |
-| 27 | Robaron 5 toneladas de Nutella… de un solo camión | Alemania, 2013 | |
+| 27 | Robaron 5 toneladas de Nutella… de un solo camión | Alemania, 2013 | 🎬 |
 | 28 | Se disfrazaron de obreros… y se robaron un puente entero | Slavkov, República Checa, 2012 | |
 | 29 | Un error de escritura impidió el robo de casi mil millones de dólares | Banco Central de Bangladesh, 2016 | |
 | 30 | Escondió 50 mil bitcoins robados… en una lata de palomitas | James Zhong, Georgia, 2012-2021 | |
@@ -108,5 +108,6 @@ Cuando un Short pase de 50 mil vistas, ese caso gana su video largo.
 
 - **#44, #46, #47 y #50:** son historias que circulan mucho y el video consiste justo en decir si son reales o no. Investígalas antes de afirmar nada.
 - **#23:** el número de fugas varía según la fuente.
+- **#27:** antes de publicar, confirma que el caso nunca se resolvió; el video lo marca "SIN RESOLVER".
 - **#36:** confirma el monto exacto y qué pasó con los detenidos.
 - **#41:** confirma el papel exacto que tuvo en el guion de la película *El robo del siglo* (2020).
