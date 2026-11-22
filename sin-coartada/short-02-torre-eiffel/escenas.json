@@ -1,0 +1,14 @@
+{
+  "fin": 59.3,
+  "escenas": [
+    {"img": "e1.png", "inicio": 0.00,  "movimiento": "zoom_in_fuerte"},
+    {"img": "e2.png", "inicio": 5.17,  "movimiento": "pan_arriba"},
+    {"img": "e3.png", "inicio": 12.39, "movimiento": "zoom_in"},
+    {"img": "e4.png", "inicio": 18.05, "movimiento": "zoom_out"},
+    {"img": "e5.png", "inicio": 19.96, "movimiento": "pan_abajo"},
+    {"img": "e6.png", "inicio": 29.45, "movimiento": "zoom_in"},
+    {"img": "e7.png", "inicio": 36.46, "movimiento": "pan_abajo"},
+    {"img": "e8.png", "inicio": 42.69, "movimiento": "sacudida"},
+    {"img": "e9.png", "inicio": 51.65, "movimiento": "zoom_out"}
+  ]
+}

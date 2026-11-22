@@ -1,29 +1,34 @@
-"""Monta el Short vertical a partir de escenas, narración y tiempos por palabra.
+"""Monta un Short vertical a partir de escenas, narración y tiempos por palabra.
 
-Uso:  python3 montar.py
-Lee:  escenas/e1.png ... e9.png, narracion.mp3, palabras.json
+Uso:  python3 montar.py <carpeta-del-short>
+      p. ej. python3 montar.py short-02-torre-eiffel
+Lee de la carpeta:
+      escenas.json   {"fin": 59.0, "escenas": [{"img": "e1.png", "inicio": 0.0, "movimiento": "zoom_in"}, ...]}
+                     movimientos: zoom_in_fuerte, zoom_in, zoom_out, pan_abajo, pan_arriba, sacudida
+      escenas/*.png  ilustraciones verticales 9:16
+      narracion.mp3  voz
+      palabras.json  tiempos por palabra de la transcripción de ElevenLabs ({"words": [{"text", "start", "end", "type"}]})
 Crea: short.mp4 (1080x1920, 30 fps) y subtitulos.ass
 """
 import json
 import subprocess
+import sys
 from pathlib import Path
 
-AQUI = Path(__file__).resolve().parent
 W, H, FPS = 1080, 1920, 30
-FIN = 59.0  # duración total; YouTube Shorts admite hasta 60 s
+AQUI = None    # carpeta del Short; se define en cargar()
+FIN = None     # duración total en segundos (YouTube Shorts admite hasta 60)
+ESCENAS = []   # (imagen, inicio en segundos, movimiento); cada corte cae donde empieza una frase
 
-# (imagen, inicio en segundos, movimiento). Los cortes caen donde empieza cada frase.
-ESCENAS = [
-    ("e1.png", 0.00, "zoom_in_fuerte"),
-    ("e2.png", 6.32, "pan_abajo"),
-    ("e3.png", 12.00, "zoom_in"),
-    ("e4.png", 20.04, "zoom_out"),
-    ("e5.png", 26.64, "pan_arriba"),
-    ("e6.png", 34.16, "zoom_in"),
-    ("e7.png", 40.60, "sacudida"),
-    ("e8.png", 45.60, "pan_abajo"),
-    ("e9.png", 54.57, "zoom_out"),
-]
+
+def cargar(carpeta):
+    global AQUI, FIN, ESCENAS
+    AQUI = Path(carpeta).resolve()
+    cfg = json.loads((AQUI / "escenas.json").read_text(encoding="utf-8"))
+    FIN = float(cfg["fin"])
+    if FIN > 60:
+        raise SystemExit("La duración pasa de 60 s: YouTube no lo tomaría como Short.")
+    ESCENAS = [(e["img"], float(e["inicio"]), e["movimiento"]) for e in cfg["escenas"]]
 
 
 def movimiento(tipo, frames):
@@ -139,4 +144,7 @@ def montar():
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        raise SystemExit("Uso: python3 montar.py <carpeta-del-short>")
+    cargar(sys.argv[1])
     montar()
