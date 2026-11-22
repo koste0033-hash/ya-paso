@@ -5,6 +5,8 @@ Cada título sirve como **título del Short y como primera frase de la narració
 
 Antes de escribir cada guion, confirma las cifras en dos fuentes. Las de esta lista son las que más se repiten en la prensa y pueden variar un poco según la fuente.
 
+¿Ya los hizo alguien más? Mira el análisis de competencia en [competencia-titulos.md](competencia-titulos.md).
+
 Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vacío) pendiente
 
 ---
