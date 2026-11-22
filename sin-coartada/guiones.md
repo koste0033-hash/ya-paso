@@ -5,6 +5,38 @@ Entre corchetes van las indicaciones para la edición; no se narran.
 
 ---
 
+## Cómo escribir ganchos que retienen
+
+Sale de revisar los Shorts más vistos de canales del mismo formato (más de un millón de vistas). Todos repiten 4 reglas:
+
+1. **Un hecho concreto y visual en la primera frase.** Quién hizo qué, sin introducción. Nada de "Hoy te voy a contar…".
+2. **Los puntos suspensivos marcan el giro.** "Hicieron X… y pasó Y". El cerebro necesita oír la segunda mitad.
+3. **Números exactos.** "507 años", "26 reinas", "76 castores". Un número concreto suena verdadero y se recuerda.
+4. **El título del video es el mismo gancho**, y la portada lo resume en 2 o 3 palabras.
+
+### Fórmulas
+
+| Fórmula | Ejemplo para Sin Coartada |
+|---|---|
+| Hizo [algo normal]… y [consecuencia absurda] | Se untó la cara con limón… y robó dos bancos |
+| [Número] + [acción]… y [giro] | Robaron 100 millones en diamantes… y los delató la basura |
+| [Algo imposible] que sí pasó | Vendió la Torre Eiffel. Dos veces. |
+| Nadie [hizo X]… hasta que [Y] | Nadie notó que faltaba la Mona Lisa… durante un día entero |
+| [Objeto cotidiano] + crimen | Un sándwich resolvió el robo de diamantes más grande de la historia |
+| Sigue sin resolverse | Secuestró un avión, saltó en paracaídas… y nunca lo encontraron |
+
+### Lo que mata un gancho
+
+- Empezar con el año o el lugar ("En 1995, en Pittsburgh…"). Eso va en la segunda frase.
+- Anunciar en vez de contar ("Esta historia te va a sorprender").
+- Gancho y portada que dicen cosas distintas.
+
+### Portada (primer cuadro del Short)
+
+Ilustración del momento más absurdo, con 2 o 3 palabras en mayúsculas amarillas y borde negro arriba ("¡JUGO DE LIMÓN!"), y un sello rojo "CASO CERRADO" o "SIN RESOLVER".
+
+---
+
 ## Short #1 · El ladrón del jugo de limón
 
 **Portada:** hombre con la cara chorreando limón frente a una cámara de seguridad. Texto: "¡JUGO DE LIMÓN!". Sello: CASO CERRADO.
