@@ -84,7 +84,14 @@ Ya están escritos en [guiones.md](guiones.md) el video largo #11 y los Shorts #
 
 ## 6. Producción
 
-- **Narración:** tu voz o una voz de IA grave, estilo noticiero. Si usas IA, márcalo como contenido sintético en YouTube Studio.
+- **Narración (voz oficial del canal):** siempre la misma voz, para que la gente reconozca el canal.
+  - Voz: **Nacho** de ElevenLabs (mexicana, clara, tono de narrador de YouTube)
+  - `voice_id`: `yfzNQS2e99Cx6312hlQF`
+  - Modelo: `eleven_v4`, que admite etiquetas como `[whispering]`, `[chuckles]`, `[serious]` o `[playful]` dentro del guion
+  - Ajustes: `stability` 0.5 · `similarity_boost` 0.75
+  - Todo esto está guardado en [config.json](config.json), que usa `generar_audios.py`. No cambies la voz ahí salvo que quieras cambiarla para todo el canal.
+  - Guion de unas 130 palabras: así la narración queda en menos de 60 segundos sin acelerarla.
+  - Es voz de IA: márcalo como contenido sintético en YouTube Studio.
 - **Imágenes:** ilustraciones tipo cómic generadas con IA, en el mismo estilo siempre. No uses fotos reales de víctimas ni de escenas del crimen.
 - **Plantilla de Short (60 s):**
   1. **0–2 s, gancho:** el dato más absurdo ("Se cubrió la cara con jugo de limón para robar un banco").
