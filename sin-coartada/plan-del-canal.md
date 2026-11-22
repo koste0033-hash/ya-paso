@@ -19,6 +19,8 @@
 
 ### Descripción del canal (para pegar)
 
+La versión completa, con emojis y palabras clave, está en [descripcion-del-canal.md](descripcion-del-canal.md).
+
 > Robos que parecen planeados por Hollywood, estafadores que vendieron la Torre Eiffel y ladrones que se delataron solos. En Sin Coartada te contamos crímenes reales que parecen de película, en un minuto.
 > Shorts nuevos cada día y la historia completa en video largo dos veces por semana. Todos los casos están documentados: las fuentes van en la descripción de cada video.
 > Únete a la brigada.
