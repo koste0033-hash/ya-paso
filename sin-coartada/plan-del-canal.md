@@ -64,6 +64,8 @@ La versión completa, con emojis y palabras clave, está en [descripcion-del-can
 | 14 | Largo | Amberes 2003: el robo de diamantes más grande de la historia |
 | 15 | Largo | D. B. Cooper: 50 años buscando a un hombre que saltó de un avión |
 
+La lista ampliada de 50 títulos está en [50-titulos.md](50-titulos.md).
+
 Ya están escritos en [guiones.md](guiones.md) el video largo #11 y los Shorts #1, #2 y #3.
 
 ## 5. Calendario de las primeras 2 semanas
