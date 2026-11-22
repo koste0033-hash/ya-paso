@@ -3,8 +3,11 @@
 Uso:  python3 montar.py <carpeta-del-short>
       p. ej. python3 montar.py short-02-torre-eiffel
 Lee de la carpeta:
-      escenas.json   {"fin": 59.0, "escenas": [{"img": "e1.png", "inicio": 0.0, "movimiento": "zoom_in"}, ...]}
+      escenas.json   {"fin": 59.0, "escenas": [{"img": "e1.png", "inicio": 0.0, "movimiento": "zoom_in"}, ...],
+                      "cortes_rapidos": true, "whoosh": true}   (las dos últimas son opcionales)
                      movimientos: zoom_in_fuerte, zoom_in, zoom_out, pan_abajo, pan_arriba, sacudida
+                     cortes_rapidos: parte cada escena larga en tomas de ~3 s con encuadres distintos
+                     whoosh: añade un sonido suave en cada corte
       escenas/*.png  ilustraciones verticales 9:16
       narracion.mp3  voz
       palabras.json  tiempos por palabra de la transcripción de ElevenLabs ({"words": [{"text", "start", "end", "type"}]})
@@ -53,6 +56,38 @@ def movimiento(tipo, frames):
                 f"{cx}+14*sin(on*2.1)*exp(-on/25)",
                 f"{cy}+10*cos(on*2.7)*exp(-on/25)")
     raise ValueError(tipo)
+
+
+# Encuadres para los cortes rápidos: (zoom inicial, zoom final, foco x, foco y), foco de 0 a 1
+ENCUADRES = [
+    (1.00, 1.10, 0.50, 0.45),   # plano general que se acerca
+    (1.38, 1.48, 0.38, 0.40),   # acercamiento a la izquierda
+    (1.32, 1.42, 0.62, 0.55),   # acercamiento a la derecha
+    (1.18, 1.04, 0.50, 0.60),   # se aleja
+]
+
+
+def encuadre(z0, z1, fx, fy, frames):
+    p = f"(on/{max(frames - 1, 1)})"
+    return (f"{z0}+({z1 - z0})*{p}",
+            f"max(0,min(iw-iw/zoom,{fx}*iw-iw/zoom/2))",
+            f"max(0,min(ih-ih/zoom,{fy}*ih-ih/zoom/2))")
+
+
+def tomas(cortes_rapidos):
+    """Convierte las escenas en tomas. Con cortes_rapidos, las escenas largas se parten
+    en tomas de ~3 s con encuadres distintos (más cambios = más retención)."""
+    lista = []
+    for i, (img, ini, tipo) in enumerate(ESCENAS):
+        fin = ESCENAS[i + 1][1] if i + 1 < len(ESCENAS) else FIN
+        dur = fin - ini
+        n = max(1, round(dur / 3.0)) if (cortes_rapidos and tipo != "zoom_in_fuerte") else 1
+        for k in range(n):
+            t0 = ini + dur * k / n
+            t1 = ini + dur * (k + 1) / n
+            mov = tipo if k == 0 else ENCUADRES[(i + k) % len(ENCUADRES)]
+            lista.append((img, t0, t1, mov))
+    return lista
 
 
 def tiempo_ass(t):
@@ -105,23 +140,24 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     (AQUI / "subtitulos.ass").write_text(cabecera + "\n".join(lineas) + "\n", encoding="utf-8")
 
 
-def montar():
+def montar(cortes_rapidos=False, whoosh=False):
     subtitulos()
     entradas, filtros, etiquetas = [], [], []
-    for i, (img, ini, tipo) in enumerate(ESCENAS):
-        fin = ESCENAS[i + 1][1] if i + 1 < len(ESCENAS) else FIN
-        dur = fin - ini
-        frames = round(dur * FPS)
+    lista = tomas(cortes_rapidos)
+    for i, (img, t0, t1, mov) in enumerate(lista):
+        # frames exactos por toma para que la suma cuadre con la duración total
+        frames = round(t1 * FPS) - round(t0 * FPS)
+        dur = frames / FPS
         entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}",
                      "-i", str(AQUI / "escenas" / img)]
-        z, x, y = movimiento(tipo, frames)
+        z, x, y = encuadre(*mov, frames) if isinstance(mov, tuple) else movimiento(mov, frames)
         filtros.append(
             f"[{i}:v]scale={W * 2}:{H * 2}:flags=lanczos,setsar=1,"
             f"zoompan=z='{z}':x='{x}':y='{y}':d=1:s={W}x{H}:fps={FPS},"
             f"trim=end_frame={frames},setpts=PTS-STARTPTS,format=yuv420p[v{i}]"
         )
         etiquetas.append(f"[v{i}]")
-    n = len(ESCENAS)
+    n = len(lista)
     filtros.append(f"{''.join(etiquetas)}concat=n={n}:v=1:a=0[base]")
     # barra de progreso amarilla abajo
     filtros.append(f"color=c=0xFFD700:s={W}x14:r={FPS}:d={FIN}[barra]")
@@ -129,11 +165,27 @@ def montar():
     ass = str(AQUI / "subtitulos.ass").replace(":", r"\:")
     filtros.append(f"[conbarra]ass='{ass}'[vout]")
     # audio: narración, colchón al final y volumen estándar de YouTube (-14 LUFS)
-    filtros.append(f"[{n}:a]apad=pad_dur=1,atrim=0:{FIN},afade=t=out:st={FIN - 0.5}:d=0.5,"
-                   f"loudnorm=I=-14:TP=-1.5:LRA=11[aout]")
+    filtros.append(f"[{n}:a]apad=pad_dur=1,atrim=0:{FIN},afade=t=out:st={FIN - 0.5}:d=0.5[narr]")
+    extra = []
+    cortes = [t0 for (_, t0, _, _) in lista[1:]]
+    if whoosh and cortes:
+        # "whoosh" suave en cada corte: ruido rosa filtrado con subida y caída rápidas
+        extra = ["-f", "lavfi", "-t", "0.35", "-i", "anoisesrc=d=0.35:c=pink:a=0.5:r=48000"]
+        k = len(cortes)
+        filtros.append(f"[{n + 1}:a]highpass=f=400,lowpass=f=5000,afade=t=in:d=0.12,"
+                       f"afade=t=out:st=0.12:d=0.23,volume=0.35,aformat=channel_layouts=mono,"
+                       f"asplit={k}" + "".join(f"[w{j}]" for j in range(k)))
+        for j, t in enumerate(cortes):
+            ms = max(0, int((t - 0.12) * 1000))
+            filtros.append(f"[w{j}]adelay={ms}|{ms}[wd{j}]")
+        filtros.append("[narr]" + "".join(f"[wd{j}]" for j in range(k)) +
+                       f"amix=inputs={k + 1}:normalize=0:duration=first[mezcla]")
+        filtros.append("[mezcla]loudnorm=I=-14:TP=-1.5:LRA=11[aout]")
+    else:
+        filtros.append("[narr]loudnorm=I=-14:TP=-1.5:LRA=11[aout]")
 
     cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", *entradas,
-           "-i", str(AQUI / "narracion.mp3"),
+           "-i", str(AQUI / "narracion.mp3"), *extra,
            "-filter_complex", ";".join(filtros),
            "-map", "[vout]", "-map", "[aout]",
            "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
@@ -147,4 +199,5 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         raise SystemExit("Uso: python3 montar.py <carpeta-del-short>")
     cargar(sys.argv[1])
-    montar()
+    cfg = json.loads((AQUI / "escenas.json").read_text(encoding="utf-8"))
+    montar(cortes_rapidos=cfg.get("cortes_rapidos", False), whoosh=cfg.get("whoosh", False))
