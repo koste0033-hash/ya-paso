@@ -118,6 +118,8 @@ Ya están escritos en [guiones.md](guiones.md) el video largo #11 y los Shorts #
 
 ## 8. Crecimiento
 
+El análisis completo con datos de un canal similar está en [ideas-crecimiento.md](ideas-crecimiento.md).
+
 - **Listas de reproducción:** *Golpes maestros*, *Estafas imposibles*, *Criminales torpes*, *Sin resolver*, *Hecho en México*, *Historias completas*.
 - Responde a los comentarios de la primera hora; ayuda a que YouTube muestre el Short a más gente.
 - Cuando tengas 3 o 4 Shorts con más de 100 mil vistas, haz un **video recopilatorio** de 10 minutos con esos casos.
