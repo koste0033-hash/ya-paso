@@ -92,6 +92,7 @@ Ya están escritos en [guiones.md](guiones.md) el video largo #11 y los Shorts #
   - Todo esto está guardado en [config.json](config.json), que usa `generar_audios.py`. No cambies la voz ahí salvo que quieras cambiarla para todo el canal.
   - Guion de unas 130 palabras: así la narración queda en menos de 60 segundos sin acelerarla.
   - Es voz de IA: márcalo como contenido sintético en YouTube Studio.
+  - En ElevenLabs también está guardada en el **Brand Kit "Sin Coartada"** (id `u2hc06Fn1eWnrAdo5wfA`), junto con el logo, la paleta de colores y las reglas de estilo.
 - **Imágenes:** ilustraciones tipo cómic generadas con IA, en el mismo estilo siempre. No uses fotos reales de víctimas ni de escenas del crimen.
 - **Plantilla de Short (60 s):**
   1. **0–2 s, gancho:** el dato más absurdo ("Se cubrió la cara con jugo de limón para robar un banco").
