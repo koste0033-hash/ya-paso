@@ -27,22 +27,23 @@ Ejemplo: **¿Por qué creyó que el limón lo hacía invisible? | Expediente #00
 | #004 | Banco Río, Acassuso (2006) | ¿Por qué con pistolas de juguete? | 🔎 | 🔴 | ✅ publicado ([YouTube](https://youtube.com/shorts/NlNZoy8SYEM)) |
 | #005 | Museo Nacional de Antropología (1985) | ¿Por qué dos estudiantes pudieron robar el Museo de Antropología? | 🔎 🇲🇽 | 🟢 | ⏰ 23 nov, 6 pm |
 | #006 | D. B. Cooper (1971) | ¿Por qué el FBI nunca encontró a D. B. Cooper? | ❓ | 🔴 | ⏰ 24 nov, 8 am |
-| #007 | País falso de Poyais (1820s) | ¿Por qué cientos de personas compraron tierras en un país que no existía? | 🔎 | 🟢 | |
-| #008 | Diamantes de Amberes (2003) | ¿Por qué una bolsa de basura arruinó el robo de diamantes más grande? | 🔎 | 🟡 | 📝 guion |
-| #009 | Gran robo del tren (1963) | ¿Por qué un juego de Monopoly delató a los ladrones del tren? | 🔎 | 🟢 | |
-| #010 | Cabeza de Pancho Villa (1926) | ¿Por qué nunca apareció la cabeza de Pancho Villa? | ❓ 🇲🇽 | 🟢 | |
-| #011 | Banco de Bangladesh (2016) | ¿Por qué un error de ortografía salvó mil millones de dólares? | 🔎 | 🟡 | |
-| #012 | Diarios falsos de Hitler (1983) | ¿Por qué una revista pagó millones por los diarios falsos de Hitler? | 🔎 | 🟢 | |
-| #013 | Frank Abagnale | ¿Por qué el de *Atrápame si puedes* probablemente mintió en casi todo? | 🤥 | 🔴 | |
-| #014 | Robo de la Mona Lisa (1911) | ¿Por qué el ladrón de la Mona Lisa la tuvo dos años escondida? | 🔎 | 🟡 | |
-| #015 | Fraude Ficrea (2014) | ¿Por qué miles de mexicanos perdieron sus ahorros en Ficrea? | 🔎 🇲🇽 | 🟢 | |
-| #016 | Van Meegeren (1945) | ¿Por qué un falsificador tuvo que pintar un cuadro frente a la policía? | 🔎 | 🟡 | |
-| #017 | Bitcoins en la lata de palomitas | ¿Por qué escondió 50 mil bitcoins en una lata de palomitas? | 🔎 | 🟢 | |
-| #018 | Puente de Brooklyn | ¿De verdad alguien vendió el puente de Brooklyn? | 🤥 | 🟢 | |
-| #019 | Chucho el Roto (s. XIX) | ¿Por qué le decían el Robin Hood mexicano a Chucho el Roto? | 🔎 🇲🇽 | 🟡 | |
-| #020 | Fuga de Alcatraz (1962) | ¿Por qué nadie sabe si los fugados de Alcatraz llegaron vivos? | ❓ | 🟡 | |
+| #007 | Ladrón de Facebook (2009) | ¿Por qué un ladrón revisó su Facebook en pleno robo? | 🔎 | 🟢 | ⏰ 24 nov, 6 pm |
+| #008 | País falso de Poyais (1820s) | ¿Por qué cientos de personas compraron tierras en un país que no existía? | 🔎 | 🟢 | |
+| — | Diamantes de Amberes (2003) | ¿Por qué una bolsa de basura arruinó el robo de diamantes más grande? | 🔎 | 🟡 | 📝 guion |
+| — | Gran robo del tren (1963) | ¿Por qué un juego de Monopoly delató a los ladrones del tren? | 🔎 | 🟢 | |
+| — | Cabeza de Pancho Villa (1926) | ¿Por qué nunca apareció la cabeza de Pancho Villa? | ❓ 🇲🇽 | 🟢 | |
+| — | Banco de Bangladesh (2016) | ¿Por qué un error de ortografía salvó mil millones de dólares? | 🔎 | 🟡 | |
+| — | Diarios falsos de Hitler (1983) | ¿Por qué una revista pagó millones por los diarios falsos de Hitler? | 🔎 | 🟢 | |
+| — | Frank Abagnale | ¿Por qué el de *Atrápame si puedes* probablemente mintió en casi todo? | 🤥 | 🔴 | |
+| — | Robo de la Mona Lisa (1911) | ¿Por qué el ladrón de la Mona Lisa la tuvo dos años escondida? | 🔎 | 🟡 | |
+| — | Fraude Ficrea (2014) | ¿Por qué miles de mexicanos perdieron sus ahorros en Ficrea? | 🔎 🇲🇽 | 🟢 | |
+| — | Van Meegeren (1945) | ¿Por qué un falsificador tuvo que pintar un cuadro frente a la policía? | 🔎 | 🟡 | |
+| — | Bitcoins en la lata de palomitas | ¿Por qué escondió 50 mil bitcoins en una lata de palomitas? | 🔎 | 🟢 | |
+| — | Puente de Brooklyn | ¿De verdad alguien vendió el puente de Brooklyn? | 🤥 | 🟢 | |
+| — | Chucho el Roto (s. XIX) | ¿Por qué le decían el Robin Hood mexicano a Chucho el Roto? | 🔎 🇲🇽 | 🟡 | |
+| — | Fuga de Alcatraz (1962) | ¿Por qué nadie sabe si los fugados de Alcatraz llegaron vivos? | ❓ | 🟡 | |
 
-Después del #020, se siguen numerando con los casos de [50-titulos.md](50-titulos.md), alternando series y metiendo un caso mexicano cada 4 o 5 expedientes.
+El número se asigna cuando el expediente se produce (los marcados con — son casos en espera). Se siguen sumando con los casos de [50-titulos.md](50-titulos.md), alternando series y metiendo un caso mexicano cada 4 o 5 expedientes.
 
 ## Antes de producir cada expediente
 

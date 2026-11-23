@@ -50,7 +50,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 | # | Título | Caso | Estado |
 |---|---|---|---|
 | 25 | Robó dos bancos sin máscara… porque creyó que el jugo de limón lo hacía invisible | McArthur Wheeler, Pittsburgh, 1995 | ✅ |
-| 26 | Entró a robar una casa… y dejó abierto su Facebook en la computadora | Jonathan Parker, Virginia Occidental, 2009 | |
+| 26 | Entró a robar una casa… y dejó abierto su Facebook en la computadora | Jonathan Parker, Virginia Occidental, 2009 | 🎬 |
 | 27 | Robaron 5 toneladas de Nutella… de un solo camión | Alemania, 2013 | 🎬 |
 | 28 | Se disfrazaron de obreros… y se robaron un puente entero | Slavkov, República Checa, 2012 | |
 | 29 | Un error de escritura impidió el robo de casi mil millones de dólares | Banco Central de Bangladesh, 2016 | |
