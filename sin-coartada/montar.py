@@ -8,6 +8,8 @@ Lee de la carpeta:
                      movimientos: zoom_in_fuerte, zoom_in, zoom_out, pan_abajo, pan_arriba, sacudida
                      cortes_rapidos: parte cada escena larga en tomas de ~3 s con encuadres distintos
                      whoosh: añade un sonido suave en cada corte
+                     outro: true pega al final el cierre "¡Suscríbete!" (identidad/v2/outro.mp4, ~4.3 s);
+                            fin + cierre debe quedar en 60 s o menos
       escenas/*.png  ilustraciones verticales 9:16
       narracion.mp3  voz
       palabras.json  tiempos por palabra de la transcripción de ElevenLabs ({"words": [{"text", "start", "end", "type"}]})
@@ -207,9 +209,41 @@ def montar(cortes_rapidos=False, whoosh=False):
     print("Listo:", AQUI / "short.mp4")
 
 
+OUTRO = Path(__file__).resolve().parent / "identidad" / "v2" / "outro.mp4"
+
+
+def duracion(archivo):
+    return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                                 "-of", "csv=p=0", str(archivo)],
+                                capture_output=True, text=True, check=True).stdout)
+
+
+def agregar_outro():
+    """Pega el cierre fijo "¡Suscríbete!" (identidad/v2/outro.mp4) al final de short.mp4."""
+    total = FIN + duracion(OUTRO)
+    if total > 60:
+        raise SystemExit(f"Con el cierre el Short dura {total:.1f} s (máximo 60): acorta 'fin'.")
+    final = AQUI / "short.mp4"
+    cuerpo = AQUI / "short-sin-outro.mp4"
+    final.replace(cuerpo)
+    subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+                    "-i", str(cuerpo), "-i", str(OUTRO),
+                    "-filter_complex",
+                    "[1:a]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[ao];"
+                    "[0:v][0:a][1:v][ao]concat=n=2:v=1:a=1[v][a]",
+                    "-map", "[v]", "-map", "[a]",
+                    "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+                    "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+                    "-movflags", "+faststart", str(final)], check=True)
+    cuerpo.unlink()
+    print(f"Cierre agregado: {final} ({total:.1f} s)")
+
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         raise SystemExit("Uso: python3 montar.py <carpeta-del-short>")
     cargar(sys.argv[1])
     cfg = json.loads((AQUI / "escenas.json").read_text(encoding="utf-8"))
     montar(cortes_rapidos=cfg.get("cortes_rapidos", False), whoosh=cfg.get("whoosh", False))
+    if cfg.get("outro"):
+        agregar_outro()
