@@ -18,13 +18,13 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 | 1 | Robaron las joyas de la corona del Louvre en 7 minutos… con un elevador de mudanzas | Museo del Louvre, París, 2025 | |
 | 2 | Dejaron una nota en la bóveda: "sin armas ni rencores"… y escaparon por las alcantarillas | Banco Río de Acassuso, Argentina, 2006 | ✅ |
 | 3 | Abrieron una tienda de pasto artificial… para cavar un túnel hasta el banco | Banco Central de Fortaleza, Brasil, 2005 | |
-| 4 | Robaron 100 millones en diamantes… y los delató una bolsa de basura | Centro de Diamantes de Amberes, Bélgica, 2003 | 📝 |
+| 4 | Robaron 100 millones en diamantes… y los delató una bolsa de basura | Centro de Diamantes de Amberes, Bélgica, 2003 | 🎬 |
 | 5 | Se robaron más de 100 piezas del Museo de Antropología en Navidad… y eran dos estudiantes | Museo Nacional de Antropología, CDMX, 1985 | 🎬 |
-| 6 | Se robaron la Mona Lisa… y la tuvieron dos años escondida en un cuarto | Museo del Louvre, 1911 | |
+| 6 | Se robaron la Mona Lisa… y la tuvieron dos años escondida en un cuarto | Museo del Louvre, 1911 | 🎬 |
 | 7 | Se disfrazaron de policías, entraron a un museo… y los marcos vacíos siguen colgados | Museo Isabella Stewart Gardner, Boston, 1990 | |
 | 8 | Una banda de jubilados perforó una bóveda… en el fin de semana de Pascua | Hatton Garden, Londres, 2015 | |
 | 9 | Fueron a robar 3 millones en efectivo… y encontraron 26 millones en oro | Brink's-Mat, Londres, 1983 | |
-| 10 | Robaron "El Grito" en menos de un minuto y dejaron una nota: "gracias por la mala seguridad" | Galería Nacional de Oslo, 1994 | |
+| 10 | Robaron "El Grito" en menos de un minuto y dejaron una nota: "gracias por la mala seguridad" | Galería Nacional de Oslo, 1994 | 🎬 |
 | 11 | Treparon por un andamio, robaron una obra de oro… y la enterraron en un bosque | Salero de Cellini, Viena, 2003 | |
 | 12 | Robaron 2.6 millones del tren de correo… y uno vivió 30 años de fiesta en Brasil | El gran robo del tren, Inglaterra, 1963 | |
 
@@ -34,7 +34,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 |---|---|---|---|
 | 13 | Vendió la Torre Eiffel como chatarra… y lo intentó dos veces | Victor Lustig, París, 1925 | 🎬 |
 | 14 | Inventó un país que no existía… y vendió terrenos ahí | Gregor MacGregor y "Poyais", 1820s | 🎬 |
-| 15 | Le vendió un Vermeer falso a un líder nazi… y tuvo que pintar otro para salvarse | Han van Meegeren, Países Bajos, 1945 | |
+| 15 | Le vendió un Vermeer falso a un líder nazi… y tuvo que pintar otro para salvarse | Han van Meegeren, Países Bajos, 1945 | 🎬 |
 | 16 | Una revista pagó millones por los diarios secretos de Hitler… y los había escrito un falsificador | Diarios de Hitler, Alemania, 1983 | |
 | 17 | Se hizo pasar por heredera alemana… y vivió gratis en los hoteles más caros de Nueva York | Anna Sorokin, 2013-2017 | |
 | 18 | Prometió un festival de lujo en una isla… y les dieron sándwiches de queso | Fyre Festival, Bahamas, 2017 | |
@@ -93,7 +93,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 | 46 | ¿De verdad alguien vendió el puente de Brooklyn? | George C. Parker | |
 | 47 | ¿Al Capone inventó la fecha de caducidad de la leche? | Mito popular | |
 | 48 | Picasso fue interrogado por el robo de la Mona Lisa… ¿era culpable? | París, 1911 | |
-| 49 | Los ladrones del tren de 1963 jugaron Monopoly con dinero real… y eso los delató | El gran robo del tren | |
+| 49 | Los ladrones del tren de 1963 jugaron Monopoly con dinero real… y eso los delató | El gran robo del tren | 🎬 |
 | 50 | ¿El fugado de Alcatraz mandó una carta en 2013 diciendo que seguía vivo? | Carta atribuida a John Anglin | |
 
 ---

@@ -30,16 +30,17 @@ Ejemplo: **¿Por qué creyó que el limón lo hacía invisible? | Expediente #00
 | #007 | Ladrón de Facebook (2009) | ¿Por qué un ladrón revisó su Facebook en pleno robo? | 🔎 | 🟢 | ⏰ 24 nov, 6 pm |
 | #008 | País falso de Poyais (1820s) | ¿Por qué cientos de personas compraron tierras en un país que no existía? | 🔎 | 🟢 | ⏰ 25 nov, 8 am |
 | #009 | Puente robado, República Checa (2012) | ¿Cómo se robaron un puente entero frente a la policía? | 🤦 | 🟢 | ⏰ 25 nov, 6 pm |
-| — | Diamantes de Amberes (2003) | ¿Por qué una bolsa de basura arruinó el robo de diamantes más grande? | 🔎 | 🟡 | 📝 guion |
-| — | Gran robo del tren (1963) | ¿Por qué un juego de Monopoly delató a los ladrones del tren? | 🔎 | 🟢 | |
 | #010 | Banco de Bangladesh (2016) | ¿Por qué un error de ortografía salvó cientos de millones? | ❓ | 🟡 | ⏰ 26 nov, 8 am |
 | #011 | Cabeza de Pancho Villa (1926) | ¿Por qué nunca apareció la cabeza de Pancho Villa? | ❓ 🇲🇽 | 🟢 | ⏰ 26 nov, 6 pm |
 | #012 | Bitcoins en la lata de palomitas (2012-2021) | ¿Por qué escondió 50 mil bitcoins en una lata de palomitas? | 🔎 | 🟢 | ⏰ 27 nov, 8 am |
+| #013 | Diamantes de Amberes (2003) | ¿Por qué una bolsa de basura arruinó el robo de diamantes más grande? | 🔎 | 🟡 | ⏰ 27 nov, 6 pm |
+| #014 | El Grito, Oslo (1994) | ¿Por qué robaron El Grito y dejaron una nota dando las gracias? | 🔎 | 🟡 | ⏰ 28 nov, 8 am (mejorado) |
+| #015 | Gran robo del tren (1963) | ¿Por qué un Monopoly mandó a la cárcel a los ladrones del tren? | 🔎 | 🟢 | ⏰ 28 nov, 6 pm |
+| #016 | Robo de la Mona Lisa (1911) | ¿Por qué el ladrón de la Mona Lisa la escondió dos años? | 🔎 | 🟡 | ⏰ 29 nov, 8 am (mejorado) |
+| #017 | Van Meegeren (1945) | ¿Por qué un falsificador tuvo que pintar frente a testigos para salvarse? | 🔎 | 🟡 | ⏰ 29 nov, 6 pm |
 | — | Diarios falsos de Hitler (1983) | ¿Por qué una revista pagó millones por los diarios falsos de Hitler? | 🔎 | 🟢 | |
 | — | Frank Abagnale | ¿Por qué el de *Atrápame si puedes* probablemente mintió en casi todo? | 🤥 | 🔴 | |
-| — | Robo de la Mona Lisa (1911) | ¿Por qué el ladrón de la Mona Lisa la tuvo dos años escondida? | 🔎 | 🟡 | |
 | — | Fraude Ficrea (2014) | ¿Por qué miles de mexicanos perdieron sus ahorros en Ficrea? | 🔎 🇲🇽 | 🟢 | |
-| — | Van Meegeren (1945) | ¿Por qué un falsificador tuvo que pintar un cuadro frente a la policía? | 🔎 | 🟡 | |
 | — | Puente de Brooklyn | ¿De verdad alguien vendió el puente de Brooklyn? | 🤥 | 🟢 | |
 | — | Chucho el Roto (s. XIX) | ¿Por qué le decían el Robin Hood mexicano a Chucho el Roto? | 🔎 🇲🇽 | 🟡 | |
 | — | Fuga de Alcatraz (1962) | ¿Por qué nadie sabe si los fugados de Alcatraz llegaron vivos? | ❓ | 🟡 | |

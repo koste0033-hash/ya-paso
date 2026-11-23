@@ -1,0 +1,82 @@
+{
+  "fin": 48.89,
+  "cortes_rapidos": true,
+  "whoosh": true,
+  "expediente": "014",
+  "outro": true,
+  "musica": "musica-suspenso.mp3",
+  "sfx": [
+    {
+      "archivo": "sfx-maquina.mp3",
+      "t": 6.36,
+      "vol": 0.5
+    },
+    {
+      "archivo": "sfx-golpe.mp3",
+      "t": 20.21,
+      "vol": 0.7
+    },
+    {
+      "archivo": "sfx-golpe.mp3",
+      "t": 40.04,
+      "vol": 0.8
+    },
+    {
+      "archivo": "sfx-sello.mp3",
+      "t": 45.47,
+      "vol": 0.9
+    }
+  ],
+  "escenas": [
+    {
+      "img": "portada.mp4",
+      "inicio": 0.0,
+      "movimiento": "zoom_in"
+    },
+    {
+      "img": "e2.png",
+      "inicio": 6.26,
+      "movimiento": "pan_abajo"
+    },
+    {
+      "img": "e3.png",
+      "inicio": 14.21,
+      "movimiento": "pan_arriba"
+    },
+    {
+      "img": "e4.png",
+      "inicio": 19.7,
+      "movimiento": "sacudida"
+    },
+    {
+      "img": "e5.png",
+      "inicio": 21.38,
+      "movimiento": "zoom_in"
+    },
+    {
+      "img": "e6.png",
+      "inicio": 25.65,
+      "movimiento": "zoom_in_fuerte"
+    },
+    {
+      "img": "e7.png",
+      "inicio": 30.01,
+      "movimiento": "zoom_out"
+    },
+    {
+      "img": "e8.png",
+      "inicio": 34.28,
+      "movimiento": "zoom_in"
+    },
+    {
+      "img": "e9.png",
+      "inicio": 41.07,
+      "movimiento": "pan_abajo"
+    },
+    {
+      "img": "e10.png",
+      "inicio": 45.37,
+      "movimiento": "zoom_in"
+    }
+  ]
+}

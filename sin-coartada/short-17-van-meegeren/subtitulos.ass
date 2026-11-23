@@ -1,0 +1,148 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Inter Display Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,9,4,2,70,70,520,1
+Style: Exp,Inter Display Black,58,&H00FFFFFF,&H00FFFFFF,&H001E10C8,&H00000000,-1,0,0,0,100,100,4,0,3,14,0,2,70,70,300,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:03.00,Exp,,0,0,0,,{\fad(150,250)\frz4}EXPEDIENTE #017
+Dialogue: 0,0:00:00.00,0:00:00.20,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}¿POR{\c&HFFFFFF&\fscx100\fscy100} QUÉ UN
+Dialogue: 0,0:00:00.20,0:00:00.39,Sub,,0,0,0,,¿POR {\c&H00D7FF&\fscx112\fscy112}QUÉ{\c&HFFFFFF&\fscx100\fscy100} UN
+Dialogue: 0,0:00:00.39,0:00:00.55,Sub,,0,0,0,,¿POR QUÉ {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:00.55,0:00:01.13,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}FALSIFICADOR{\c&HFFFFFF&\fscx100\fscy100} TUVO QUE
+Dialogue: 0,0:00:01.13,0:00:01.37,Sub,,0,0,0,,FALSIFICADOR {\c&H00D7FF&\fscx112\fscy112}TUVO{\c&HFFFFFF&\fscx100\fscy100} QUE
+Dialogue: 0,0:00:01.37,0:00:01.57,Sub,,0,0,0,,FALSIFICADOR TUVO {\c&H00D7FF&\fscx112\fscy112}QUE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:01.57,0:00:01.90,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}PINTAR{\c&HFFFFFF&\fscx100\fscy100} UN CUADRO
+Dialogue: 0,0:00:01.90,0:00:02.05,Sub,,0,0,0,,PINTAR {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100} CUADRO
+Dialogue: 0,0:00:02.05,0:00:02.38,Sub,,0,0,0,,PINTAR UN {\c&H00D7FF&\fscx112\fscy112}CUADRO{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:02.38,0:00:02.70,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}FRENTE{\c&HFFFFFF&\fscx100\fscy100} A TESTIGOS…
+Dialogue: 0,0:00:02.70,0:00:02.81,Sub,,0,0,0,,FRENTE {\c&H00D7FF&\fscx112\fscy112}A{\c&HFFFFFF&\fscx100\fscy100} TESTIGOS…
+Dialogue: 0,0:00:02.81,0:00:03.51,Sub,,0,0,0,,FRENTE A {\c&H00D7FF&\fscx112\fscy112}TESTIGOS…{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:03.51,0:00:04.04,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}PARA{\c&HFFFFFF&\fscx100\fscy100} SALVAR SU
+Dialogue: 0,0:00:04.04,0:00:04.75,Sub,,0,0,0,,PARA {\c&H00D7FF&\fscx112\fscy112}SALVAR{\c&HFFFFFF&\fscx100\fscy100} SU
+Dialogue: 0,0:00:04.75,0:00:06.14,Sub,,0,0,0,,PARA SALVAR {\c&H00D7FF&\fscx112\fscy112}SU{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:06.14,0:00:06.64,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}VIDA?{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:06.64,0:00:06.96,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ABRAN{\c&HFFFFFF&\fscx100\fscy100} EL EXPEDIENTE.
+Dialogue: 0,0:00:06.96,0:00:07.14,Sub,,0,0,0,,ABRAN {\c&H00D7FF&\fscx112\fscy112}EL{\c&HFFFFFF&\fscx100\fscy100} EXPEDIENTE.
+Dialogue: 0,0:00:07.14,0:00:08.13,Sub,,0,0,0,,ABRAN EL {\c&H00D7FF&\fscx112\fscy112}EXPEDIENTE.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:08.13,0:00:08.55,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}HOLANDA,{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:08.55,0:00:09.34,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}1945.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:09.34,0:00:09.68,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}TERMINA{\c&HFFFFFF&\fscx100\fscy100} LA GUERRA
+Dialogue: 0,0:00:09.68,0:00:09.82,Sub,,0,0,0,,TERMINA {\c&H00D7FF&\fscx112\fscy112}LA{\c&HFFFFFF&\fscx100\fscy100} GUERRA
+Dialogue: 0,0:00:09.82,0:00:10.47,Sub,,0,0,0,,TERMINA LA {\c&H00D7FF&\fscx112\fscy112}GUERRA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:10.47,0:00:10.57,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}Y{\c&HFFFFFF&\fscx100\fscy100} LOS ALIADOS
+Dialogue: 0,0:00:10.57,0:00:10.75,Sub,,0,0,0,,Y {\c&H00D7FF&\fscx112\fscy112}LOS{\c&HFFFFFF&\fscx100\fscy100} ALIADOS
+Dialogue: 0,0:00:10.75,0:00:11.09,Sub,,0,0,0,,Y LOS {\c&H00D7FF&\fscx112\fscy112}ALIADOS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:11.09,0:00:11.55,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ENCUENTRAN{\c&HFFFFFF&\fscx100\fscy100} LA COLECCIÓN
+Dialogue: 0,0:00:11.55,0:00:11.69,Sub,,0,0,0,,ENCUENTRAN {\c&H00D7FF&\fscx112\fscy112}LA{\c&HFFFFFF&\fscx100\fscy100} COLECCIÓN
+Dialogue: 0,0:00:11.69,0:00:12.12,Sub,,0,0,0,,ENCUENTRAN LA {\c&H00D7FF&\fscx112\fscy112}COLECCIÓN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:12.12,0:00:12.26,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} ARTE DE
+Dialogue: 0,0:00:12.26,0:00:12.48,Sub,,0,0,0,,DE {\c&H00D7FF&\fscx112\fscy112}ARTE{\c&HFFFFFF&\fscx100\fscy100} DE
+Dialogue: 0,0:00:12.48,0:00:12.62,Sub,,0,0,0,,DE ARTE {\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:12.62,0:00:12.96,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}HERMANN{\c&HFFFFFF&\fscx100\fscy100} GÖRING.
+Dialogue: 0,0:00:12.96,0:00:13.59,Sub,,0,0,0,,HERMANN {\c&H00D7FF&\fscx112\fscy112}GÖRING.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:13.59,0:00:13.94,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ENTRE{\c&HFFFFFF&\fscx100\fscy100} SUS TESOROS
+Dialogue: 0,0:00:13.94,0:00:14.17,Sub,,0,0,0,,ENTRE {\c&H00D7FF&\fscx112\fscy112}SUS{\c&HFFFFFF&\fscx100\fscy100} TESOROS
+Dialogue: 0,0:00:14.17,0:00:14.62,Sub,,0,0,0,,ENTRE SUS {\c&H00D7FF&\fscx112\fscy112}TESOROS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:14.62,0:00:14.86,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}HAY{\c&HFFFFFF&\fscx100\fscy100} UN VERMEER…
+Dialogue: 0,0:00:14.86,0:00:15.05,Sub,,0,0,0,,HAY {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100} VERMEER…
+Dialogue: 0,0:00:15.05,0:00:15.77,Sub,,0,0,0,,HAY UN {\c&H00D7FF&\fscx112\fscy112}VERMEER…{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:15.77,0:00:16.27,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}VENDIDO{\c&HFFFFFF&\fscx100\fscy100} POR UN
+Dialogue: 0,0:00:16.27,0:00:16.54,Sub,,0,0,0,,VENDIDO {\c&H00D7FF&\fscx112\fscy112}POR{\c&HFFFFFF&\fscx100\fscy100} UN
+Dialogue: 0,0:00:16.54,0:00:16.74,Sub,,0,0,0,,VENDIDO POR {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:16.74,0:00:17.61,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}HOLANDÉS:{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:17.61,0:00:17.87,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}HAN{\c&HFFFFFF&\fscx100\fscy100} VAN MEEGEREN.
+Dialogue: 0,0:00:17.87,0:00:18.14,Sub,,0,0,0,,HAN {\c&H00D7FF&\fscx112\fscy112}VAN{\c&HFFFFFF&\fscx100\fscy100} MEEGEREN.
+Dialogue: 0,0:00:18.14,0:00:18.99,Sub,,0,0,0,,HAN VAN {\c&H00D7FF&\fscx112\fscy112}MEEGEREN.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:18.99,0:00:19.13,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}LO{\c&HFFFFFF&\fscx100\fscy100} ARRESTAN POR
+Dialogue: 0,0:00:19.13,0:00:19.50,Sub,,0,0,0,,LO {\c&H00D7FF&\fscx112\fscy112}ARRESTAN{\c&HFFFFFF&\fscx100\fscy100} POR
+Dialogue: 0,0:00:19.50,0:00:19.68,Sub,,0,0,0,,LO ARRESTAN {\c&H00D7FF&\fscx112\fscy112}POR{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:19.68,0:00:20.32,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}TRAICIÓN.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:20.32,0:00:20.69,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}VENDER{\c&HFFFFFF&\fscx100\fscy100} UN TESORO
+Dialogue: 0,0:00:20.69,0:00:20.86,Sub,,0,0,0,,VENDER {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100} TESORO
+Dialogue: 0,0:00:20.86,0:00:21.24,Sub,,0,0,0,,VENDER UN {\c&H00D7FF&\fscx112\fscy112}TESORO{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:21.24,0:00:21.71,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}NACIONAL{\c&HFFFFFF&\fscx100\fscy100} AL ENEMIGO
+Dialogue: 0,0:00:21.71,0:00:21.88,Sub,,0,0,0,,NACIONAL {\c&H00D7FF&\fscx112\fscy112}AL{\c&HFFFFFF&\fscx100\fscy100} ENEMIGO
+Dialogue: 0,0:00:21.88,0:00:22.30,Sub,,0,0,0,,NACIONAL AL {\c&H00D7FF&\fscx112\fscy112}ENEMIGO{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:22.30,0:00:22.63,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}PODÍA{\c&HFFFFFF&\fscx100\fscy100} COSTARLE LA
+Dialogue: 0,0:00:22.63,0:00:23.10,Sub,,0,0,0,,PODÍA {\c&H00D7FF&\fscx112\fscy112}COSTARLE{\c&HFFFFFF&\fscx100\fscy100} LA
+Dialogue: 0,0:00:23.10,0:00:23.27,Sub,,0,0,0,,PODÍA COSTARLE {\c&H00D7FF&\fscx112\fscy112}LA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:23.27,0:00:23.88,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}VIDA.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:23.88,0:00:24.03,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}Y{\c&HFFFFFF&\fscx100\fscy100} ENTONCES CONFIESA
+Dialogue: 0,0:00:24.03,0:00:24.62,Sub,,0,0,0,,Y {\c&H00D7FF&\fscx112\fscy112}ENTONCES{\c&HFFFFFF&\fscx100\fscy100} CONFIESA
+Dialogue: 0,0:00:24.62,0:00:25.22,Sub,,0,0,0,,Y ENTONCES {\c&H00D7FF&\fscx112\fscy112}CONFIESA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:25.22,0:00:25.56,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ALGO{\c&HFFFFFF&\fscx100\fscy100} INCREÍBLE:
+Dialogue: 0,0:00:25.56,0:00:26.77,Sub,,0,0,0,,ALGO {\c&H00D7FF&\fscx112\fscy112}INCREÍBLE:{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:26.77,0:00:27.05,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ESE{\c&HFFFFFF&\fscx100\fscy100} VERMEER…
+Dialogue: 0,0:00:27.05,0:00:27.57,Sub,,0,0,0,,ESE {\c&H00D7FF&\fscx112\fscy112}VERMEER…{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:27.57,0:00:28.20,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}LO{\c&HFFFFFF&\fscx100\fscy100} PINTÉ YO.
+Dialogue: 0,0:00:28.20,0:00:28.56,Sub,,0,0,0,,LO {\c&H00D7FF&\fscx112\fscy112}PINTÉ{\c&HFFFFFF&\fscx100\fscy100} YO.
+Dialogue: 0,0:00:28.56,0:00:28.75,Sub,,0,0,0,,LO PINTÉ {\c&H00D7FF&\fscx112\fscy112}YO.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:28.75,0:00:29.68,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}NADIE{\c&HFFFFFF&\fscx100\fscy100} LE CREE.
+Dialogue: 0,0:00:29.68,0:00:29.87,Sub,,0,0,0,,NADIE {\c&H00D7FF&\fscx112\fscy112}LE{\c&HFFFFFF&\fscx100\fscy100} CREE.
+Dialogue: 0,0:00:29.87,0:00:30.16,Sub,,0,0,0,,NADIE LE {\c&H00D7FF&\fscx112\fscy112}CREE.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:30.16,0:00:30.70,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ASÍ{\c&HFFFFFF&\fscx100\fscy100} QUE,
+Dialogue: 0,0:00:30.70,0:00:30.94,Sub,,0,0,0,,ASÍ {\c&H00D7FF&\fscx112\fscy112}QUE,{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:30.94,0:00:31.34,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}FRENTE{\c&HFFFFFF&\fscx100\fscy100} A TESTIGOS,
+Dialogue: 0,0:00:31.34,0:00:31.47,Sub,,0,0,0,,FRENTE {\c&H00D7FF&\fscx112\fscy112}A{\c&HFFFFFF&\fscx100\fscy100} TESTIGOS,
+Dialogue: 0,0:00:31.47,0:00:31.97,Sub,,0,0,0,,FRENTE A {\c&H00D7FF&\fscx112\fscy112}TESTIGOS,{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:31.97,0:00:32.32,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}PINTA{\c&HFFFFFF&\fscx100\fscy100} OTRO "VERMEER"
+Dialogue: 0,0:00:32.32,0:00:32.61,Sub,,0,0,0,,PINTA {\c&H00D7FF&\fscx112\fscy112}OTRO{\c&HFFFFFF&\fscx100\fscy100} "VERMEER"
+Dialogue: 0,0:00:32.61,0:00:33.06,Sub,,0,0,0,,PINTA OTRO {\c&H00D7FF&\fscx112\fscy112}"VERMEER"{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:33.06,0:00:33.29,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}CON{\c&HFFFFFF&\fscx100\fscy100} LA MISMA
+Dialogue: 0,0:00:33.29,0:00:33.48,Sub,,0,0,0,,CON {\c&H00D7FF&\fscx112\fscy112}LA{\c&HFFFFFF&\fscx100\fscy100} MISMA
+Dialogue: 0,0:00:33.48,0:00:33.82,Sub,,0,0,0,,CON LA {\c&H00D7FF&\fscx112\fscy112}MISMA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:33.82,0:00:34.27,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}TÉCNICA.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:34.27,0:00:35.01,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}RESULTA{\c&HFFFFFF&\fscx100\fscy100} QUE LLEVABA
+Dialogue: 0,0:00:35.01,0:00:35.23,Sub,,0,0,0,,RESULTA {\c&H00D7FF&\fscx112\fscy112}QUE{\c&HFFFFFF&\fscx100\fscy100} LLEVABA
+Dialogue: 0,0:00:35.23,0:00:35.65,Sub,,0,0,0,,RESULTA QUE {\c&H00D7FF&\fscx112\fscy112}LLEVABA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:35.65,0:00:35.92,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}AÑOS{\c&HFFFFFF&\fscx100\fscy100} ENGAÑANDO A
+Dialogue: 0,0:00:35.92,0:00:36.44,Sub,,0,0,0,,AÑOS {\c&H00D7FF&\fscx112\fscy112}ENGAÑANDO{\c&HFFFFFF&\fscx100\fscy100} A
+Dialogue: 0,0:00:36.44,0:00:36.57,Sub,,0,0,0,,AÑOS ENGAÑANDO {\c&H00D7FF&\fscx112\fscy112}A{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:36.57,0:00:36.79,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}LOS{\c&HFFFFFF&\fscx100\fscy100} MEJORES EXPERTOS
+Dialogue: 0,0:00:36.79,0:00:37.21,Sub,,0,0,0,,LOS {\c&H00D7FF&\fscx112\fscy112}MEJORES{\c&HFFFFFF&\fscx100\fscy100} EXPERTOS
+Dialogue: 0,0:00:37.21,0:00:37.68,Sub,,0,0,0,,LOS MEJORES {\c&H00D7FF&\fscx112\fscy112}EXPERTOS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:37.68,0:00:37.90,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DEL{\c&HFFFFFF&\fscx100\fscy100} MUNDO…
+Dialogue: 0,0:00:37.90,0:00:38.21,Sub,,0,0,0,,DEL {\c&H00D7FF&\fscx112\fscy112}MUNDO…{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:38.21,0:00:38.48,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}Y{\c&HFFFFFF&\fscx100\fscy100} HASTA A
+Dialogue: 0,0:00:38.48,0:00:38.70,Sub,,0,0,0,,Y {\c&H00D7FF&\fscx112\fscy112}HASTA{\c&HFFFFFF&\fscx100\fscy100} A
+Dialogue: 0,0:00:38.70,0:00:38.79,Sub,,0,0,0,,Y HASTA {\c&H00D7FF&\fscx112\fscy112}A{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:38.79,0:00:39.34,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}GÖRING.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:39.34,0:00:39.55,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} TRAIDOR PASÓ
+Dialogue: 0,0:00:39.55,0:00:40.06,Sub,,0,0,0,,DE {\c&H00D7FF&\fscx112\fscy112}TRAIDOR{\c&HFFFFFF&\fscx100\fscy100} PASÓ
+Dialogue: 0,0:00:40.06,0:00:40.40,Sub,,0,0,0,,DE TRAIDOR {\c&H00D7FF&\fscx112\fscy112}PASÓ{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:40.40,0:00:40.55,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}A{\c&HFFFFFF&\fscx100\fscy100} HÉROE:
+Dialogue: 0,0:00:40.55,0:00:40.94,Sub,,0,0,0,,A {\c&H00D7FF&\fscx112\fscy112}HÉROE:{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:40.94,0:00:41.15,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}EL{\c&HFFFFFF&\fscx100\fscy100} HOMBRE QUE
+Dialogue: 0,0:00:41.15,0:00:41.94,Sub,,0,0,0,,EL {\c&H00D7FF&\fscx112\fscy112}HOMBRE{\c&HFFFFFF&\fscx100\fscy100} QUE
+Dialogue: 0,0:00:41.94,0:00:42.21,Sub,,0,0,0,,EL HOMBRE {\c&H00D7FF&\fscx112\fscy112}QUE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:42.21,0:00:42.67,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ESTAFÓ{\c&HFFFFFF&\fscx100\fscy100} A UN
+Dialogue: 0,0:00:42.67,0:00:42.82,Sub,,0,0,0,,ESTAFÓ {\c&H00D7FF&\fscx112\fscy112}A{\c&HFFFFFF&\fscx100\fscy100} UN
+Dialogue: 0,0:00:42.82,0:00:43.03,Sub,,0,0,0,,ESTAFÓ A {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:43.03,0:00:43.36,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}JEFE{\c&HFFFFFF&\fscx100\fscy100} NAZI.
+Dialogue: 0,0:00:43.36,0:00:43.69,Sub,,0,0,0,,JEFE {\c&H00D7FF&\fscx112\fscy112}NAZI.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:43.69,0:00:43.84,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}LO{\c&HFFFFFF&\fscx100\fscy100} CONDENARON POR
+Dialogue: 0,0:00:43.84,0:00:44.61,Sub,,0,0,0,,LO {\c&H00D7FF&\fscx112\fscy112}CONDENARON{\c&HFFFFFF&\fscx100\fscy100} POR
+Dialogue: 0,0:00:44.61,0:00:44.80,Sub,,0,0,0,,LO CONDENARON {\c&H00D7FF&\fscx112\fscy112}POR{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:44.80,0:00:45.42,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}FALSIFICACIÓN{\c&HFFFFFF&\fscx100\fscy100} A UN
+Dialogue: 0,0:00:45.42,0:00:45.52,Sub,,0,0,0,,FALSIFICACIÓN {\c&H00D7FF&\fscx112\fscy112}A{\c&HFFFFFF&\fscx100\fscy100} UN
+Dialogue: 0,0:00:45.52,0:00:45.67,Sub,,0,0,0,,FALSIFICACIÓN A {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:45.67,0:00:45.86,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}AÑO{\c&HFFFFFF&\fscx100\fscy100} DE PRISIÓN.
+Dialogue: 0,0:00:45.86,0:00:46.01,Sub,,0,0,0,,AÑO {\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} PRISIÓN.
+Dialogue: 0,0:00:46.01,0:00:46.63,Sub,,0,0,0,,AÑO DE {\c&H00D7FF&\fscx112\fscy112}PRISIÓN.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:46.63,0:00:47.02,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}PERO{\c&HFFFFFF&\fscx100\fscy100} MURIÓ ANTES
+Dialogue: 0,0:00:47.02,0:00:47.49,Sub,,0,0,0,,PERO {\c&H00D7FF&\fscx112\fscy112}MURIÓ{\c&HFFFFFF&\fscx100\fscy100} ANTES
+Dialogue: 0,0:00:47.49,0:00:47.95,Sub,,0,0,0,,PERO MURIÓ {\c&H00D7FF&\fscx112\fscy112}ANTES{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:47.95,0:00:48.20,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} CUMPLIRLO.
+Dialogue: 0,0:00:48.20,0:00:49.41,Sub,,0,0,0,,DE {\c&H00D7FF&\fscx112\fscy112}CUMPLIRLO.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:49.41,0:00:49.65,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}CASO{\c&HFFFFFF&\fscx100\fscy100} CERRADO.
+Dialogue: 0,0:00:49.65,0:00:50.29,Sub,,0,0,0,,CASO {\c&H00D7FF&\fscx112\fscy112}CERRADO.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:50.29,0:00:50.83,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}¿CULPABLE{\c&HFFFFFF&\fscx100\fscy100} O GENIO?
+Dialogue: 0,0:00:50.83,0:00:50.93,Sub,,0,0,0,,¿CULPABLE {\c&H00D7FF&\fscx112\fscy112}O{\c&HFFFFFF&\fscx100\fscy100} GENIO?
+Dialogue: 0,0:00:50.93,0:00:51.42,Sub,,0,0,0,,¿CULPABLE O {\c&H00D7FF&\fscx112\fscy112}GENIO?{\c&HFFFFFF&\fscx100\fscy100}

@@ -1,0 +1,150 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Inter Display Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,9,4,2,70,70,520,1
+Style: Exp,Inter Display Black,58,&H00FFFFFF,&H00FFFFFF,&H001E10C8,&H00000000,-1,0,0,0,100,100,4,0,3,14,0,2,70,70,300,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:03.00,Exp,,0,0,0,,{\fad(150,250)\frz4}EXPEDIENTE #014
+Dialogue: 0,0:00:00.00,0:00:00.24,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}¿POR{\c&HFFFFFF&\fscx100\fscy100} QUÉ UNOS
+Dialogue: 0,0:00:00.24,0:00:00.48,Sub,,0,0,0,,¿POR {\c&H00D7FF&\fscx112\fscy112}QUÉ{\c&HFFFFFF&\fscx100\fscy100} UNOS
+Dialogue: 0,0:00:00.48,0:00:00.77,Sub,,0,0,0,,¿POR QUÉ {\c&H00D7FF&\fscx112\fscy112}UNOS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:00.77,0:00:01.27,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}LADRONES{\c&HFFFFFF&\fscx100\fscy100} SE ROBARON
+Dialogue: 0,0:00:01.27,0:00:01.45,Sub,,0,0,0,,LADRONES {\c&H00D7FF&\fscx112\fscy112}SE{\c&HFFFFFF&\fscx100\fscy100} ROBARON
+Dialogue: 0,0:00:01.45,0:00:01.90,Sub,,0,0,0,,LADRONES SE {\c&H00D7FF&\fscx112\fscy112}ROBARON{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:01.90,0:00:02.09,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}EL{\c&HFFFFFF&\fscx100\fscy100} GRITO…
+Dialogue: 0,0:00:02.09,0:00:02.43,Sub,,0,0,0,,EL {\c&H00D7FF&\fscx112\fscy112}GRITO…{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:02.43,0:00:02.77,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}Y{\c&HFFFFFF&\fscx100\fscy100} DEJARON UNA
+Dialogue: 0,0:00:02.77,0:00:03.21,Sub,,0,0,0,,Y {\c&H00D7FF&\fscx112\fscy112}DEJARON{\c&HFFFFFF&\fscx100\fscy100} UNA
+Dialogue: 0,0:00:03.21,0:00:03.44,Sub,,0,0,0,,Y DEJARON {\c&H00D7FF&\fscx112\fscy112}UNA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:03.44,0:00:03.72,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}NOTA{\c&HFFFFFF&\fscx100\fscy100} DANDO LAS
+Dialogue: 0,0:00:03.72,0:00:04.06,Sub,,0,0,0,,NOTA {\c&H00D7FF&\fscx112\fscy112}DANDO{\c&HFFFFFF&\fscx100\fscy100} LAS
+Dialogue: 0,0:00:04.06,0:00:04.29,Sub,,0,0,0,,NOTA DANDO {\c&H00D7FF&\fscx112\fscy112}LAS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:04.29,0:00:04.73,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}GRACIAS?{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:04.73,0:00:05.60,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ABRAN{\c&HFFFFFF&\fscx100\fscy100} EL EXPEDIENTE.
+Dialogue: 0,0:00:05.60,0:00:05.77,Sub,,0,0,0,,ABRAN {\c&H00D7FF&\fscx112\fscy112}EL{\c&HFFFFFF&\fscx100\fscy100} EXPEDIENTE.
+Dialogue: 0,0:00:05.77,0:00:06.36,Sub,,0,0,0,,ABRAN EL {\c&H00D7FF&\fscx112\fscy112}EXPEDIENTE.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:06.36,0:00:07.55,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}NORUEGA,{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:07.55,0:00:08.31,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}12{\c&HFFFFFF&\fscx100\fscy100} DE FEBRERO
+Dialogue: 0,0:00:08.31,0:00:08.53,Sub,,0,0,0,,12 {\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} FEBRERO
+Dialogue: 0,0:00:08.53,0:00:09.05,Sub,,0,0,0,,12 DE {\c&H00D7FF&\fscx112\fscy112}FEBRERO{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:09.05,0:00:09.27,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} 1994.
+Dialogue: 0,0:00:09.27,0:00:10.24,Sub,,0,0,0,,DE {\c&H00D7FF&\fscx112\fscy112}1994.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:10.24,0:00:10.47,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}TODO{\c&HFFFFFF&\fscx100\fscy100} EL MUNDO
+Dialogue: 0,0:00:10.47,0:00:10.62,Sub,,0,0,0,,TODO {\c&H00D7FF&\fscx112\fscy112}EL{\c&HFFFFFF&\fscx100\fscy100} MUNDO
+Dialogue: 0,0:00:10.62,0:00:10.90,Sub,,0,0,0,,TODO EL {\c&H00D7FF&\fscx112\fscy112}MUNDO{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:10.90,0:00:11.61,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ESTÁ{\c&HFFFFFF&\fscx100\fscy100} VIENDO LA
+Dialogue: 0,0:00:11.61,0:00:11.93,Sub,,0,0,0,,ESTÁ {\c&H00D7FF&\fscx112\fscy112}VIENDO{\c&HFFFFFF&\fscx100\fscy100} LA
+Dialogue: 0,0:00:11.93,0:00:12.08,Sub,,0,0,0,,ESTÁ VIENDO {\c&H00D7FF&\fscx112\fscy112}LA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:12.08,0:00:12.65,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}INAUGURACIÓN{\c&HFFFFFF&\fscx100\fscy100} DE LOS
+Dialogue: 0,0:00:12.65,0:00:12.80,Sub,,0,0,0,,INAUGURACIÓN {\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} LOS
+Dialogue: 0,0:00:12.80,0:00:12.99,Sub,,0,0,0,,INAUGURACIÓN DE {\c&H00D7FF&\fscx112\fscy112}LOS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:12.99,0:00:13.31,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}JUEGOS{\c&HFFFFFF&\fscx100\fscy100} OLÍMPICOS DE
+Dialogue: 0,0:00:13.31,0:00:13.75,Sub,,0,0,0,,JUEGOS {\c&H00D7FF&\fscx112\fscy112}OLÍMPICOS{\c&HFFFFFF&\fscx100\fscy100} DE
+Dialogue: 0,0:00:13.75,0:00:13.90,Sub,,0,0,0,,JUEGOS OLÍMPICOS {\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:13.90,0:00:14.31,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}INVIERNO.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:14.31,0:00:14.86,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}PERO{\c&HFFFFFF&\fscx100\fscy100} EN OSLO,
+Dialogue: 0,0:00:14.86,0:00:15.03,Sub,,0,0,0,,PERO {\c&H00D7FF&\fscx112\fscy112}EN{\c&HFFFFFF&\fscx100\fscy100} OSLO,
+Dialogue: 0,0:00:15.03,0:00:15.30,Sub,,0,0,0,,PERO EN {\c&H00D7FF&\fscx112\fscy112}OSLO,{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:15.30,0:00:15.62,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ANTES{\c&HFFFFFF&\fscx100\fscy100} DEL AMANECER,
+Dialogue: 0,0:00:15.62,0:00:15.85,Sub,,0,0,0,,ANTES {\c&H00D7FF&\fscx112\fscy112}DEL{\c&HFFFFFF&\fscx100\fscy100} AMANECER,
+Dialogue: 0,0:00:15.85,0:00:16.32,Sub,,0,0,0,,ANTES DEL {\c&H00D7FF&\fscx112\fscy112}AMANECER,{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:16.32,0:00:16.55,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DOS{\c&HFFFFFF&\fscx100\fscy100} HOMBRES RECARGAN
+Dialogue: 0,0:00:16.55,0:00:16.97,Sub,,0,0,0,,DOS {\c&H00D7FF&\fscx112\fscy112}HOMBRES{\c&HFFFFFF&\fscx100\fscy100} RECARGAN
+Dialogue: 0,0:00:16.97,0:00:17.44,Sub,,0,0,0,,DOS HOMBRES {\c&H00D7FF&\fscx112\fscy112}RECARGAN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:17.44,0:00:17.66,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}UNA{\c&HFFFFFF&\fscx100\fscy100} ESCALERA EN
+Dialogue: 0,0:00:17.66,0:00:18.14,Sub,,0,0,0,,UNA {\c&H00D7FF&\fscx112\fscy112}ESCALERA{\c&HFFFFFF&\fscx100\fscy100} EN
+Dialogue: 0,0:00:18.14,0:00:18.31,Sub,,0,0,0,,UNA ESCALERA {\c&H00D7FF&\fscx112\fscy112}EN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:18.31,0:00:18.48,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}LA{\c&HFFFFFF&\fscx100\fscy100} GALERÍA NACIONAL.
+Dialogue: 0,0:00:18.48,0:00:18.91,Sub,,0,0,0,,LA {\c&H00D7FF&\fscx112\fscy112}GALERÍA{\c&HFFFFFF&\fscx100\fscy100} NACIONAL.
+Dialogue: 0,0:00:18.91,0:00:19.80,Sub,,0,0,0,,LA GALERÍA {\c&H00D7FF&\fscx112\fscy112}NACIONAL.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:19.80,0:00:20.21,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}SUBEN,{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:20.21,0:00:20.68,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ROMPEN{\c&HFFFFFF&\fscx100\fscy100} UNA VENTANA…
+Dialogue: 0,0:00:20.68,0:00:20.96,Sub,,0,0,0,,ROMPEN {\c&H00D7FF&\fscx112\fscy112}UNA{\c&HFFFFFF&\fscx100\fscy100} VENTANA…
+Dialogue: 0,0:00:20.96,0:00:21.48,Sub,,0,0,0,,ROMPEN UNA {\c&H00D7FF&\fscx112\fscy112}VENTANA…{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:21.48,0:00:21.60,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}Y{\c&HFFFFFF&\fscx100\fscy100} EN MENOS
+Dialogue: 0,0:00:21.60,0:00:21.77,Sub,,0,0,0,,Y {\c&H00D7FF&\fscx112\fscy112}EN{\c&HFFFFFF&\fscx100\fscy100} MENOS
+Dialogue: 0,0:00:21.77,0:00:22.36,Sub,,0,0,0,,Y EN {\c&H00D7FF&\fscx112\fscy112}MENOS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:22.36,0:00:22.52,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} UN MINUTO
+Dialogue: 0,0:00:22.52,0:00:22.69,Sub,,0,0,0,,DE {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100} MINUTO
+Dialogue: 0,0:00:22.69,0:00:23.04,Sub,,0,0,0,,DE UN {\c&H00D7FF&\fscx112\fscy112}MINUTO{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:23.04,0:00:23.21,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}SE{\c&HFFFFFF&\fscx100\fscy100} LLEVAN UNA
+Dialogue: 0,0:00:23.21,0:00:23.56,Sub,,0,0,0,,SE {\c&H00D7FF&\fscx112\fscy112}LLEVAN{\c&HFFFFFF&\fscx100\fscy100} UNA
+Dialogue: 0,0:00:23.56,0:00:23.78,Sub,,0,0,0,,SE LLEVAN {\c&H00D7FF&\fscx112\fscy112}UNA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:23.78,0:00:23.94,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} LAS PINTURAS
+Dialogue: 0,0:00:23.94,0:00:24.16,Sub,,0,0,0,,DE {\c&H00D7FF&\fscx112\fscy112}LAS{\c&HFFFFFF&\fscx100\fscy100} PINTURAS
+Dialogue: 0,0:00:24.16,0:00:24.61,Sub,,0,0,0,,DE LAS {\c&H00D7FF&\fscx112\fscy112}PINTURAS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:24.61,0:00:24.82,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}MÁS{\c&HFFFFFF&\fscx100\fscy100} FAMOSAS DEL
+Dialogue: 0,0:00:24.82,0:00:25.22,Sub,,0,0,0,,MÁS {\c&H00D7FF&\fscx112\fscy112}FAMOSAS{\c&HFFFFFF&\fscx100\fscy100} DEL
+Dialogue: 0,0:00:25.22,0:00:25.43,Sub,,0,0,0,,MÁS FAMOSAS {\c&H00D7FF&\fscx112\fscy112}DEL{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:25.43,0:00:25.75,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}MUNDO.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:25.75,0:00:26.59,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ANTES{\c&HFFFFFF&\fscx100\fscy100} DE IRSE,
+Dialogue: 0,0:00:26.59,0:00:26.78,Sub,,0,0,0,,ANTES {\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} IRSE,
+Dialogue: 0,0:00:26.78,0:00:27.08,Sub,,0,0,0,,ANTES DE {\c&H00D7FF&\fscx112\fscy112}IRSE,{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:27.08,0:00:27.43,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DEJAN{\c&HFFFFFF&\fscx100\fscy100} UNA NOTA:
+Dialogue: 0,0:00:27.43,0:00:27.67,Sub,,0,0,0,,DEJAN {\c&H00D7FF&\fscx112\fscy112}UNA{\c&HFFFFFF&\fscx100\fscy100} NOTA:
+Dialogue: 0,0:00:27.67,0:00:27.96,Sub,,0,0,0,,DEJAN UNA {\c&H00D7FF&\fscx112\fscy112}NOTA:{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:27.96,0:00:28.82,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}"GRACIAS{\c&HFFFFFF&\fscx100\fscy100} POR LA
+Dialogue: 0,0:00:28.82,0:00:29.06,Sub,,0,0,0,,"GRACIAS {\c&H00D7FF&\fscx112\fscy112}POR{\c&HFFFFFF&\fscx100\fscy100} LA
+Dialogue: 0,0:00:29.06,0:00:29.25,Sub,,0,0,0,,"GRACIAS POR {\c&H00D7FF&\fscx112\fscy112}LA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:29.25,0:00:29.55,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}MALA{\c&HFFFFFF&\fscx100\fscy100} SEGURIDAD." DESPUÉS
+Dialogue: 0,0:00:29.55,0:00:30.11,Sub,,0,0,0,,MALA {\c&H00D7FF&\fscx112\fscy112}SEGURIDAD."{\c&HFFFFFF&\fscx100\fscy100} DESPUÉS
+Dialogue: 0,0:00:30.11,0:00:30.99,Sub,,0,0,0,,MALA SEGURIDAD." {\c&H00D7FF&\fscx112\fscy112}DESPUÉS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:30.99,0:00:31.32,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}PIDEN{\c&HFFFFFF&\fscx100\fscy100} UN MILLÓN
+Dialogue: 0,0:00:31.32,0:00:31.49,Sub,,0,0,0,,PIDEN {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100} MILLÓN
+Dialogue: 0,0:00:31.49,0:00:31.87,Sub,,0,0,0,,PIDEN UN {\c&H00D7FF&\fscx112\fscy112}MILLÓN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:31.87,0:00:32.04,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} DÓLARES DE
+Dialogue: 0,0:00:32.04,0:00:32.47,Sub,,0,0,0,,DE {\c&H00D7FF&\fscx112\fscy112}DÓLARES{\c&HFFFFFF&\fscx100\fscy100} DE
+Dialogue: 0,0:00:32.47,0:00:32.64,Sub,,0,0,0,,DE DÓLARES {\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:32.64,0:00:33.07,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}RESCATE.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:33.07,0:00:33.24,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}EL{\c&HFFFFFF&\fscx100\fscy100} MUSEO SE
+Dialogue: 0,0:00:33.24,0:00:33.90,Sub,,0,0,0,,EL {\c&H00D7FF&\fscx112\fscy112}MUSEO{\c&HFFFFFF&\fscx100\fscy100} SE
+Dialogue: 0,0:00:33.90,0:00:34.07,Sub,,0,0,0,,EL MUSEO {\c&H00D7FF&\fscx112\fscy112}SE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:34.07,0:00:34.38,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}NIEGA.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:34.38,0:00:35.23,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ENTONCES{\c&HFFFFFF&\fscx100\fscy100} LA POLICÍA
+Dialogue: 0,0:00:35.23,0:00:35.41,Sub,,0,0,0,,ENTONCES {\c&H00D7FF&\fscx112\fscy112}LA{\c&HFFFFFF&\fscx100\fscy100} POLICÍA
+Dialogue: 0,0:00:35.41,0:00:35.85,Sub,,0,0,0,,ENTONCES LA {\c&H00D7FF&\fscx112\fscy112}POLICÍA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:35.85,0:00:36.13,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}ARMA{\c&HFFFFFF&\fscx100\fscy100} UNA TRAMPA:
+Dialogue: 0,0:00:36.13,0:00:36.36,Sub,,0,0,0,,ARMA {\c&H00D7FF&\fscx112\fscy112}UNA{\c&HFFFFFF&\fscx100\fscy100} TRAMPA:
+Dialogue: 0,0:00:36.36,0:00:36.75,Sub,,0,0,0,,ARMA UNA {\c&H00D7FF&\fscx112\fscy112}TRAMPA:{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:36.75,0:00:37.03,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}UNOS{\c&HFFFFFF&\fscx100\fscy100} AGENTES SE
+Dialogue: 0,0:00:37.03,0:00:37.85,Sub,,0,0,0,,UNOS {\c&H00D7FF&\fscx112\fscy112}AGENTES{\c&HFFFFFF&\fscx100\fscy100} SE
+Dialogue: 0,0:00:37.85,0:00:38.03,Sub,,0,0,0,,UNOS AGENTES {\c&H00D7FF&\fscx112\fscy112}SE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:38.03,0:00:38.37,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}HACEN{\c&HFFFFFF&\fscx100\fscy100} PASAR POR
+Dialogue: 0,0:00:38.37,0:00:38.70,Sub,,0,0,0,,HACEN {\c&H00D7FF&\fscx112\fscy112}PASAR{\c&HFFFFFF&\fscx100\fscy100} POR
+Dialogue: 0,0:00:38.70,0:00:38.93,Sub,,0,0,0,,HACEN PASAR {\c&H00D7FF&\fscx112\fscy112}POR{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:38.93,0:00:39.58,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}COMPRADORES{\c&HFFFFFF&\fscx100\fscy100} DE ARTE…
+Dialogue: 0,0:00:39.58,0:00:39.76,Sub,,0,0,0,,COMPRADORES {\c&H00D7FF&\fscx112\fscy112}DE{\c&HFFFFFF&\fscx100\fscy100} ARTE…
+Dialogue: 0,0:00:39.76,0:00:40.04,Sub,,0,0,0,,COMPRADORES DE {\c&H00D7FF&\fscx112\fscy112}ARTE…{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:40.04,0:00:40.17,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}Y{\c&HFFFFFF&\fscx100\fscy100} LOS LADRONES
+Dialogue: 0,0:00:40.17,0:00:40.40,Sub,,0,0,0,,Y {\c&H00D7FF&\fscx112\fscy112}LOS{\c&HFFFFFF&\fscx100\fscy100} LADRONES
+Dialogue: 0,0:00:40.40,0:00:40.89,Sub,,0,0,0,,Y LOS {\c&H00D7FF&\fscx112\fscy112}LADRONES{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:40.89,0:00:41.17,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}CAEN.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:41.17,0:00:41.33,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}EN{\c&HFFFFFF&\fscx100\fscy100} MAYO,
+Dialogue: 0,0:00:41.33,0:00:41.58,Sub,,0,0,0,,EN {\c&H00D7FF&\fscx112\fscy112}MAYO,{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:41.58,0:00:42.03,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}EL{\c&HFFFFFF&\fscx100\fscy100} GRITO APARECE
+Dialogue: 0,0:00:42.03,0:00:42.33,Sub,,0,0,0,,EL {\c&H00D7FF&\fscx112\fscy112}GRITO{\c&HFFFFFF&\fscx100\fscy100} APARECE
+Dialogue: 0,0:00:42.33,0:00:42.91,Sub,,0,0,0,,EL GRITO {\c&H00D7FF&\fscx112\fscy112}APARECE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:42.91,0:00:43.06,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}EN{\c&HFFFFFF&\fscx100\fscy100} UN HOTEL
+Dialogue: 0,0:00:43.06,0:00:43.22,Sub,,0,0,0,,EN {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100} HOTEL
+Dialogue: 0,0:00:43.22,0:00:43.52,Sub,,0,0,0,,EN UN {\c&H00D7FF&\fscx112\fscy112}HOTEL{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:43.52,0:00:43.81,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}JUNTO{\c&HFFFFFF&\fscx100\fscy100} AL MAR.
+Dialogue: 0,0:00:43.81,0:00:43.96,Sub,,0,0,0,,JUNTO {\c&H00D7FF&\fscx112\fscy112}AL{\c&HFFFFFF&\fscx100\fscy100} MAR.
+Dialogue: 0,0:00:43.96,0:00:44.17,Sub,,0,0,0,,JUNTO AL {\c&H00D7FF&\fscx112\fscy112}MAR.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:44.17,0:00:44.78,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}SIN{\c&HFFFFFF&\fscx100\fscy100} UN RASGUÑO.
+Dialogue: 0,0:00:44.78,0:00:44.98,Sub,,0,0,0,,SIN {\c&H00D7FF&\fscx112\fscy112}UN{\c&HFFFFFF&\fscx100\fscy100} RASGUÑO.
+Dialogue: 0,0:00:44.98,0:00:45.47,Sub,,0,0,0,,SIN UN {\c&H00D7FF&\fscx112\fscy112}RASGUÑO.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:45.47,0:00:46.15,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}CASO{\c&HFFFFFF&\fscx100\fscy100} CERRADO.
+Dialogue: 0,0:00:46.15,0:00:46.57,Sub,,0,0,0,,CASO {\c&H00D7FF&\fscx112\fscy112}CERRADO.{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:46.57,0:00:46.71,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}¿TÚ{\c&HFFFFFF&\fscx100\fscy100} HABRÍAS CAÍDO
+Dialogue: 0,0:00:46.71,0:00:47.42,Sub,,0,0,0,,¿TÚ {\c&H00D7FF&\fscx112\fscy112}HABRÍAS{\c&HFFFFFF&\fscx100\fscy100} CAÍDO
+Dialogue: 0,0:00:47.42,0:00:47.67,Sub,,0,0,0,,¿TÚ HABRÍAS {\c&H00D7FF&\fscx112\fscy112}CAÍDO{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:47.67,0:00:47.81,Sub,,0,0,0,,{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}{\c&H00D7FF&\fscx112\fscy112}EN{\c&HFFFFFF&\fscx100\fscy100} LA TRAMPA?
+Dialogue: 0,0:00:47.81,0:00:47.95,Sub,,0,0,0,,EN {\c&H00D7FF&\fscx112\fscy112}LA{\c&HFFFFFF&\fscx100\fscy100} TRAMPA?
+Dialogue: 0,0:00:47.95,0:00:48.78,Sub,,0,0,0,,EN LA {\c&H00D7FF&\fscx112\fscy112}TRAMPA?{\c&HFFFFFF&\fscx100\fscy100}
