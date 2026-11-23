@@ -24,8 +24,8 @@ Ejemplo: **¿Por qué creyó que el limón lo hacía invisible? | Expediente #00
 | #001 | Ladrón del jugo de limón (1995) | ¿Por qué creyó que el limón lo hacía invisible? | 🔎 | 🟢 | ✅ publicado |
 | #002 | Victor Lustig, Torre Eiffel (1925) | ¿Por qué un estafador pudo vender la Torre Eiffel dos veces? | 🔎 | 🟢 | ✅ publicado |
 | #003 | 5 toneladas de Nutella (2013) | ¿Por qué alguien se robaría 5 toneladas de Nutella? | ❓ | 🟡 | ✅ publicado |
-| #004 | Banco Río, Acassuso (2006) | ¿Por qué con pistolas de juguete? El robo del siglo | 🔎 | 🔴 | ⏰ 23 nov, 8 am |
-| #005 | Museo Nacional de Antropología (1985) | ¿Por qué dos estudiantes pudieron robar el Museo de Antropología? | 🔎 🇲🇽 | 🟢 | 📝 guion |
+| #004 | Banco Río, Acassuso (2006) | ¿Por qué con pistolas de juguete? | 🔎 | 🔴 | ⏰ 23 nov, 8 am |
+| #005 | Museo Nacional de Antropología (1985) | ¿Por qué dos estudiantes pudieron robar el Museo de Antropología? | 🔎 🇲🇽 | 🟢 | ⏰ 24 nov, 8 am |
 | #006 | Diamantes de Amberes (2003) | ¿Por qué una bolsa de basura arruinó el robo de diamantes más grande? | 🔎 | 🟡 | 📝 guion |
 | #007 | País falso de Poyais (1820s) | ¿Por qué cientos de personas compraron tierras en un país que no existía? | 🔎 | 🟢 | |
 | #008 | D. B. Cooper (1971) | ¿Por qué el FBI nunca encontró a D. B. Cooper? | ❓ | 🔴 | |
