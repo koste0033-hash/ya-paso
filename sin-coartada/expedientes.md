@@ -26,9 +26,9 @@ Ejemplo: **¿Por qué creyó que el limón lo hacía invisible? | Expediente #00
 | #003 | 5 toneladas de Nutella (2013) | ¿Por qué alguien se robaría 5 toneladas de Nutella? | ❓ | 🟡 | ✅ publicado |
 | #004 | Banco Río, Acassuso (2006) | ¿Por qué con pistolas de juguete? | 🔎 | 🔴 | ⏰ 23 nov, 8 am |
 | #005 | Museo Nacional de Antropología (1985) | ¿Por qué dos estudiantes pudieron robar el Museo de Antropología? | 🔎 🇲🇽 | 🟢 | ⏰ 24 nov, 8 am |
-| #008 | Diamantes de Amberes (2003) | ¿Por qué una bolsa de basura arruinó el robo de diamantes más grande? | 🔎 | 🟡 | 📝 guion |
-| #007 | País falso de Poyais (1820s) | ¿Por qué cientos de personas compraron tierras en un país que no existía? | 🔎 | 🟢 | |
 | #006 | D. B. Cooper (1971) | ¿Por qué el FBI nunca encontró a D. B. Cooper? | ❓ | 🔴 | ⏰ 25 nov, 8 am |
+| #007 | País falso de Poyais (1820s) | ¿Por qué cientos de personas compraron tierras en un país que no existía? | 🔎 | 🟢 | |
+| #008 | Diamantes de Amberes (2003) | ¿Por qué una bolsa de basura arruinó el robo de diamantes más grande? | 🔎 | 🟡 | 📝 guion |
 | #009 | Gran robo del tren (1963) | ¿Por qué un juego de Monopoly delató a los ladrones del tren? | 🔎 | 🟢 | |
 | #010 | Cabeza de Pancho Villa (1926) | ¿Por qué nunca apareció la cabeza de Pancho Villa? | ❓ 🇲🇽 | 🟢 | |
 | #011 | Banco de Bangladesh (2016) | ¿Por qué un error de ortografía salvó mil millones de dólares? | 🔎 | 🟡 | |
