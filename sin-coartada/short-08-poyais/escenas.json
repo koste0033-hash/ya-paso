@@ -1,0 +1,54 @@
+{
+  "fin": 49.1,
+  "cortes_rapidos": true,
+  "whoosh": true,
+  "expediente": "008",
+  "outro": true,
+  "escenas": [
+    {
+      "img": "e1.png",
+      "inicio": 0.0,
+      "movimiento": "zoom_in_fuerte"
+    },
+    {
+      "img": "e2.png",
+      "inicio": 11.13,
+      "movimiento": "pan_abajo"
+    },
+    {
+      "img": "e3.png",
+      "inicio": 17.83,
+      "movimiento": "zoom_in"
+    },
+    {
+      "img": "e4.png",
+      "inicio": 21.47,
+      "movimiento": "zoom_in"
+    },
+    {
+      "img": "e5.png",
+      "inicio": 25.68,
+      "movimiento": "pan_arriba"
+    },
+    {
+      "img": "e7.png",
+      "inicio": 29.89,
+      "movimiento": "zoom_out"
+    },
+    {
+      "img": "e8.png",
+      "inicio": 39.33,
+      "movimiento": "zoom_in"
+    },
+    {
+      "img": "e9.png",
+      "inicio": 45.0,
+      "movimiento": "zoom_out"
+    },
+    {
+      "img": "e1.png",
+      "inicio": 47.07,
+      "movimiento": "zoom_in"
+    }
+  ]
+}

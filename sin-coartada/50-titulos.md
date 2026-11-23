@@ -33,7 +33,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 | # | Título | Caso | Estado |
 |---|---|---|---|
 | 13 | Vendió la Torre Eiffel como chatarra… y lo intentó dos veces | Victor Lustig, París, 1925 | 🎬 |
-| 14 | Inventó un país que no existía… y vendió terrenos ahí | Gregor MacGregor y "Poyais", 1820s | |
+| 14 | Inventó un país que no existía… y vendió terrenos ahí | Gregor MacGregor y "Poyais", 1820s | 🎬 |
 | 15 | Le vendió un Vermeer falso a un líder nazi… y tuvo que pintar otro para salvarse | Han van Meegeren, Países Bajos, 1945 | |
 | 16 | Una revista pagó millones por los diarios secretos de Hitler… y los había escrito un falsificador | Diarios de Hitler, Alemania, 1983 | |
 | 17 | Se hizo pasar por heredera alemana… y vivió gratis en los hoteles más caros de Nueva York | Anna Sorokin, 2013-2017 | |
