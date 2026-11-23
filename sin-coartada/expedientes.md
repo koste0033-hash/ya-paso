@@ -40,7 +40,6 @@ Ejemplo: **¿Por qué creyó que el limón lo hacía invisible? | Expediente #00
 | — | Robo de la Mona Lisa (1911) | ¿Por qué el ladrón de la Mona Lisa la tuvo dos años escondida? | 🔎 | 🟡 | |
 | — | Fraude Ficrea (2014) | ¿Por qué miles de mexicanos perdieron sus ahorros en Ficrea? | 🔎 🇲🇽 | 🟢 | |
 | — | Van Meegeren (1945) | ¿Por qué un falsificador tuvo que pintar un cuadro frente a la policía? | 🔎 | 🟡 | |
-| (#012) | Bitcoins en la lata de palomitas | ¿Por qué escondió 50 mil bitcoins en una lata de palomitas? | 🔎 | 🟢 | |
 | — | Puente de Brooklyn | ¿De verdad alguien vendió el puente de Brooklyn? | 🤥 | 🟢 | |
 | — | Chucho el Roto (s. XIX) | ¿Por qué le decían el Robin Hood mexicano a Chucho el Roto? | 🔎 🇲🇽 | 🟡 | |
 | — | Fuga de Alcatraz (1962) | ¿Por qué nadie sabe si los fugados de Alcatraz llegaron vivos? | ❓ | 🟡 | |
