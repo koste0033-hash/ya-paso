@@ -24,14 +24,18 @@ FIN = None     # duración total en segundos (YouTube Shorts admite hasta 60)
 ESCENAS = []   # (imagen, inicio en segundos, movimiento); cada corte cae donde empieza una frase
 
 
+EXPEDIENTE = None  # número de expediente que se muestra al inicio (opcional)
+
+
 def cargar(carpeta):
-    global AQUI, FIN, ESCENAS
+    global AQUI, FIN, ESCENAS, EXPEDIENTE
     AQUI = Path(carpeta).resolve()
     cfg = json.loads((AQUI / "escenas.json").read_text(encoding="utf-8"))
     FIN = float(cfg["fin"])
     if FIN > 60:
         raise SystemExit("La duración pasa de 60 s: YouTube no lo tomaría como Short.")
     ESCENAS = [(e["img"], float(e["inicio"]), e["movimiento"]) for e in cfg["escenas"]]
+    EXPEDIENTE = cfg.get("expediente")
 
 
 def movimiento(tipo, frames):
@@ -98,7 +102,7 @@ def subtitulos():
     """Subtítulos de 1 a 3 palabras; la palabra que se está diciendo va en amarillo."""
     datos = json.loads((AQUI / "palabras.json").read_text(encoding="utf-8"))
     palabras = [w for w in datos["words"]
-                if w.get("type", "word") == "word" and not w["text"].startswith("[")]
+                if w.get("type", "word") == "word" and "[" not in w["text"] and "]" not in w["text"]]
     grupos, actual = [], []
     for w in palabras:
         actual.append(w)
@@ -137,6 +141,14 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
                 partes.append(txt)
             pop = r"{\fscx85\fscy85\t(0,90,\fscx100\fscy100)}" if j == 0 else ""
             lineas.append(f"Dialogue: 0,{tiempo_ass(ini)},{tiempo_ass(fin)},Sub,,0,0,0,,{pop}{' '.join(partes)}")
+    if EXPEDIENTE:
+        # sello del número de expediente arriba, los primeros 3 segundos (marca del canal)
+        cabecera = cabecera.replace(
+            "\n\n[Events]",
+            "\nStyle: Exp,Inter Display Black,58,&H00FFFFFF,&H00FFFFFF,&H001E10C8,&H00000000,"
+            "-1,0,0,0,100,100,4,0,3,14,0,2,70,70,300,1\n\n[Events]")
+        lineas.insert(0, f"Dialogue: 1,{tiempo_ass(0)},{tiempo_ass(3.0)},Exp,,0,0,0,,"
+                         r"{\fad(150,250)\frz4}" + f"EXPEDIENTE #{EXPEDIENTE}")
     (AQUI / "subtitulos.ass").write_text(cabecera + "\n".join(lineas) + "\n", encoding="utf-8")
 
 

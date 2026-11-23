@@ -31,6 +31,19 @@ Sale de revisar los Shorts más vistos de canales del mismo formato (más de un 
 - Anunciar en vez de contar ("Esta historia te va a sorprender").
 - Gancho y portada que dicen cosas distintas.
 
+## Identidad Sin Coartada
+
+Lo que hace que el canal no se parezca a ningún otro. Lista de casos numerados: [expedientes.md](expedientes.md).
+
+- **Expediente numerado:** cada Short es "Expediente #00X". El número aparece en pantalla los primeros 3 segundos (`"expediente": "005"` en `escenas.json`) y al final del título.
+- **El Inspector narra**, con dos frases fijas:
+  - Al abrir, después de la pregunta: *"Abran el expediente."*
+  - Al cerrar, antes de la pregunta al público: *"Caso cerrado… ¿o no?"* (en los casos sin resolver: *"Este expediente… sigue abierto."*).
+- **Serie principal, "El error que los delató":** el guion gira alrededor del detalle absurdo que hundió al culpable, y ese detalle es lo que queda pendiente hasta el final.
+- **Pista del siguiente expediente:** última frase antes de la pregunta: *"Mañana: [objeto del próximo caso]…"* (por ejemplo, "Mañana: una lata de palomitas… con 50 mil bitcoins adentro"). Solo cuando ya esté producido el siguiente.
+- **Comunidad, "¿Culpable o genio?":** encuesta en la pestaña de Comunidad y comentario fijado con esa pregunta en cada expediente.
+- **Lo que no copiamos de otros canales:** su personaje, su forma de presentar ("respondido por un comandante…") ni sus temas. Lo que sí tomamos es lo que funciona en general: la pregunta en el título, la portada limpia y el ritmo rápido.
+
 ### Portada (primer cuadro del Short) · formato v2
 
 Inspirado en Comandante Porqué. Primera versión: el Short #4 (Banco Río).
