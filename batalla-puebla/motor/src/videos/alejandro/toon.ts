@@ -380,6 +380,29 @@ const hatOn = (p: Pen, o: Outfit, hp: P2[], H: Blob, cx: number, hc: number, lig
       const [tx, ty] = R([[cx, yb - ht - 6 * u]])[0];
       p.ell(tx, ty, 7 * u, 7 * u, "#2b7a4b", 2.5 * u); // green tuft
     }
+  } else if (o.hat === "kepi") {
+    // French 1862 kepi: red crown, dark-blue band, black visor, top slanting down toward the front
+    const yb = crown + 0.27 * HH, ht = 0.42 * HH, wb = 44 * u, wt = 40 * u, col = o.cap ?? "#c0262c";
+    const body = R([...sag(yb, wb).reverse(), [cx - wt, yb - ht], [cx + wt, yb - ht * (side ? 0.78 : 0.92)]]);
+    p.shadedFill(body, col, mul(col, SH_FELT), light, wt, 0.4);
+    p.clip(body, () => p.band(R([[cx - wt - 6 * u, yb - 0.08 * HH], [cx + wt + 6 * u, yb - 0.08 * HH]]), "#22305c", 0.17 * HH, 1.2 * u));
+    p.poly(body, null, ow);
+    const deg = (a * 180) / Math.PI;
+    if (side) p.poly(R([[cx + 34 * u, yb - 1 * u], [cx + 62 * u, yb + 9 * u], [cx + 32 * u, yb + 7 * u]]), "#16171b", 2.5 * u);
+    else {
+      const [px, py] = R([[cx + 3 * u * facing, yb + 3 * u]])[0];
+      p.ell(px, py, 32 * u, 0.05 * HH, "#16171b", 2.5 * u, 0, 180, deg);
+      const [bx, by] = R([[cx, yb - 0.1 * HH]])[0];
+      p.ell(bx, by, 5 * u, 5 * u, "#e8c45a", 1.5 * u, 0, 360, deg); // brass button
+    }
+  } else if (o.hat === "sombrero") {
+    // wide palm-straw hat of the Puebla sierra volunteers
+    const col = o.cap ?? "#d9b860", deg = (a * 180) / Math.PI;
+    const [kx, ky] = R([[cx, crown + 0.04 * HH]])[0];
+    p.ell(kx, ky, 0.3 * W, 0.24 * HH, col, ow, 180, 360, deg); // crown dome
+    const [bx, by] = R([[cx, crown + 0.07 * HH]])[0];
+    p.ell(bx, by, 0.78 * W, 0.1 * HH, shade(col, 0.92), ow, 0, 360, deg); // brim
+    p.ell(bx, by - 0.012 * HH, 0.3 * W, 0.035 * HH, "#7a4a2a", 0, 0, 360, deg); // hat band
   } else if (o.hat === "cap" || o.hat === "hair") {
     const cut = crown + (o.hat === "cap" ? 0.3 : 0.42) * HH;
     const keep = (x: number, y: number) => y < cut || (side && o.hat === "hair" && x < cx - 6 * u && y < hc + 0.42 * H.b);
