@@ -32,8 +32,8 @@ Ejemplo: **¿Por qué creyó que el limón lo hacía invisible? | Expediente #00
 | #009 | Puente robado, República Checa (2012) | ¿Cómo se robaron un puente entero frente a la policía? | 🤦 | 🟢 | ⏰ 25 nov, 6 pm |
 | — | Diamantes de Amberes (2003) | ¿Por qué una bolsa de basura arruinó el robo de diamantes más grande? | 🔎 | 🟡 | 📝 guion |
 | — | Gran robo del tren (1963) | ¿Por qué un juego de Monopoly delató a los ladrones del tren? | 🔎 | 🟢 | |
-| — | Cabeza de Pancho Villa (1926) | ¿Por qué nunca apareció la cabeza de Pancho Villa? | ❓ 🇲🇽 | 🟢 | |
-| — | Banco de Bangladesh (2016) | ¿Por qué un error de ortografía salvó mil millones de dólares? | 🔎 | 🟡 | |
+| #010 | Banco de Bangladesh (2016) | ¿Por qué un error de ortografía salvó cientos de millones? | ❓ | 🟡 | ⏰ 26 nov, 8 am |
+| #011 | Cabeza de Pancho Villa (1926) | ¿Por qué nunca apareció la cabeza de Pancho Villa? | ❓ 🇲🇽 | 🟢 | ⏰ 26 nov, 6 pm |
 | — | Diarios falsos de Hitler (1983) | ¿Por qué una revista pagó millones por los diarios falsos de Hitler? | 🔎 | 🟢 | |
 | — | Frank Abagnale | ¿Por qué el de *Atrápame si puedes* probablemente mintió en casi todo? | 🤥 | 🔴 | |
 | — | Robo de la Mona Lisa (1911) | ¿Por qué el ladrón de la Mona Lisa la tuvo dos años escondida? | 🔎 | 🟡 | |

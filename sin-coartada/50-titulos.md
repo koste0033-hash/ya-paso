@@ -53,7 +53,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 | 26 | Entró a robar una casa… y dejó abierto su Facebook en la computadora | Jonathan Parker, Virginia Occidental, 2009 | 🎬 |
 | 27 | Robaron 5 toneladas de Nutella… de un solo camión | Alemania, 2013 | 🎬 |
 | 28 | Se disfrazaron de obreros… y se robaron un puente entero | Horní Slavkov, República Checa, 2012 | 🎬 |
-| 29 | Un error de escritura impidió el robo de casi mil millones de dólares | Banco Central de Bangladesh, 2016 | |
+| 29 | Un error de escritura impidió el robo de casi mil millones de dólares | Banco Central de Bangladesh, 2016 | 🎬 |
 | 30 | Escondió 50 mil bitcoins robados… en una lata de palomitas | James Zhong, Georgia, 2012-2021 | |
 | 31 | Lavaba miles de millones en bitcoins… y en sus ratos libres era rapera | Bitfinex, Nueva York, 2022 | |
 
@@ -63,7 +63,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 |---|---|---|---|
 | 32 | Secuestró un avión, pidió 200 mil dólares y saltó en paracaídas… nunca lo encontraron | D. B. Cooper, Estados Unidos, 1971 | 🎬 |
 | 33 | Dejaron cabezas falsas en sus camas y escaparon de Alcatraz… ¿llegaron vivos? | Fuga de Alcatraz, 1962 | |
-| 34 | Le robaron la cabeza a Pancho Villa… y nunca apareció | Parral, Chihuahua, 1926 | |
+| 34 | Le robaron la cabeza a Pancho Villa… y nunca apareció | Parral, Chihuahua, 1926 | 🎬 |
 | 35 | Un hombre apareció en una playa con un papelito que decía "Tamam Shud"… y tardaron 74 años en saber quién era | El hombre de Somerton, Australia, 1948 | |
 | 36 | 10 millones de dólares desaparecieron del aeropuerto de Santiago… en minutos | Aeropuerto de Santiago, Chile, 2014 | |
 | 37 | Ofrecen 10 millones de dólares de recompensa… y nadie ha dicho nada en más de 35 años | Recompensa del Museo Gardner | |
