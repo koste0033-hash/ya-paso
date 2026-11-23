@@ -10,6 +10,9 @@ Lee de la carpeta:
                      whoosh: añade un sonido suave en cada corte
                      outro: true pega al final el cierre "¡Suscríbete!" (identidad/v2/outro.mp4, ~4.3 s);
                             fin + cierre debe quedar en 60 s o menos
+                     musica: "musica-suspenso.mp3" (de identidad/audio/), bajita y con sidechain bajo la voz
+                     sfx: [{"archivo": "sfx-sello.mp3", "t": 47.8, "vol": 0.9}, ...] efectos en segundos exactos
+                     una escena "img" que termine en .mp4 (p. ej. portada animada) se usa tal cual
       escenas/*.png  ilustraciones verticales 9:16
       narracion.mp3  voz
       palabras.json  tiempos por palabra de la transcripción de ElevenLabs ({"words": [{"text", "start", "end", "type"}]})
@@ -87,7 +90,8 @@ def tomas(cortes_rapidos):
     for i, (img, ini, tipo) in enumerate(ESCENAS):
         fin = ESCENAS[i + 1][1] if i + 1 < len(ESCENAS) else FIN
         dur = fin - ini
-        n = max(1, round(dur / 3.0)) if (cortes_rapidos and tipo != "zoom_in_fuerte") else 1
+        es_video = img.lower().endswith(".mp4")
+        n = max(1, round(dur / 3.0)) if (cortes_rapidos and tipo != "zoom_in_fuerte" and not es_video) else 1
         for k in range(n):
             t0 = ini + dur * k / n
             t1 = ini + dur * (k + 1) / n
@@ -154,7 +158,14 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     (AQUI / "subtitulos.ass").write_text(cabecera + "\n".join(lineas) + "\n", encoding="utf-8")
 
 
-def montar(cortes_rapidos=False, whoosh=False):
+AUDIO = Path(__file__).resolve().parent / "identidad" / "audio"
+
+
+def montar(cortes_rapidos=False, whoosh=False, musica=None, sfx=None):
+    """musica: archivo de identidad/audio (p. ej. "musica-suspenso.mp3"), va bajita y se
+    agacha sola cuando habla el narrador. sfx: lista de {"archivo", "t", "vol"} con efectos
+    de identidad/audio en segundos exactos. Una escena .mp4 (p. ej. portada animada) se usa
+    tal cual, sin zoom."""
     subtitulos()
     entradas, filtros, etiquetas = [], [], []
     lista = tomas(cortes_rapidos)
@@ -162,6 +173,14 @@ def montar(cortes_rapidos=False, whoosh=False):
         # frames exactos por toma para que la suma cuadre con la duración total
         frames = round(t1 * FPS) - round(t0 * FPS)
         dur = frames / FPS
+        if img.lower().endswith(".mp4"):
+            entradas += ["-i", str(AQUI / "escenas" / img)]
+            filtros.append(
+                f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,"
+                f"fps={FPS},tpad=stop_mode=clone:stop_duration={dur:.3f},"
+                f"trim=end_frame={frames},setpts=PTS-STARTPTS,format=yuv420p[v{i}]")
+            etiquetas.append(f"[v{i}]")
+            continue
         entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}",
                      "-i", str(AQUI / "escenas" / img)]
         z, x, y = encuadre(*mov, frames) if isinstance(mov, tuple) else movimiento(mov, frames)
@@ -179,21 +198,45 @@ def montar(cortes_rapidos=False, whoosh=False):
     ass = str(AQUI / "subtitulos.ass").replace(":", r"\:")
     filtros.append(f"[conbarra]ass='{ass}'[vout]")
     # audio: narración, colchón al final y volumen estándar de YouTube (-14 LUFS)
-    filtros.append(f"[{n}:a]apad=pad_dur=1,atrim=0:{FIN},afade=t=out:st={FIN - 0.5}:d=0.5[narr]")
-    extra = []
+    filtros.append(f"[{n}:a]apad=pad_dur=1,atrim=0:{FIN},afade=t=out:st={FIN - 0.5}:d=0.5,"
+                   f"aformat=sample_rates=48000:channel_layouts=stereo[narr0]")
+    extra, capas = [], []
+    sig = n + 1  # índice de la siguiente entrada de audio
+    if musica:
+        # música bajita que se agacha sola cuando habla el narrador (sidechain)
+        extra += ["-stream_loop", "-1", "-i", str(AUDIO / musica)]
+        filtros.append("[narr0]asplit=2[narr][narrsc]")
+        filtros.append(f"[{sig}:a]atrim=0:{FIN},asetpts=PTS-STARTPTS,"
+                       f"aformat=sample_rates=48000:channel_layouts=stereo,volume=0.30,"
+                       f"afade=t=in:d=1,afade=t=out:st={FIN - 1.5}:d=1.5[mraw]")
+        filtros.append("[mraw][narrsc]sidechaincompress=threshold=0.02:ratio=6:attack=15:release=350[mus]")
+        capas.append("[mus]")
+        sig += 1
+    else:
+        filtros.append("[narr0]anull[narr]")
     cortes = [t0 for (_, t0, _, _) in lista[1:]]
     if whoosh and cortes:
         # "whoosh" suave en cada corte: ruido rosa filtrado con subida y caída rápidas
-        extra = ["-f", "lavfi", "-t", "0.35", "-i", "anoisesrc=d=0.35:c=pink:a=0.5:r=48000"]
+        extra += ["-f", "lavfi", "-t", "0.35", "-i", "anoisesrc=d=0.35:c=pink:a=0.5:r=48000"]
         k = len(cortes)
-        filtros.append(f"[{n + 1}:a]highpass=f=400,lowpass=f=5000,afade=t=in:d=0.12,"
-                       f"afade=t=out:st=0.12:d=0.23,volume=0.35,aformat=channel_layouts=mono,"
+        filtros.append(f"[{sig}:a]highpass=f=400,lowpass=f=5000,afade=t=in:d=0.12,"
+                       f"afade=t=out:st=0.12:d=0.23,volume=0.35,aformat=channel_layouts=stereo,"
                        f"asplit={k}" + "".join(f"[w{j}]" for j in range(k)))
         for j, t in enumerate(cortes):
             ms = max(0, int((t - 0.12) * 1000))
             filtros.append(f"[w{j}]adelay={ms}|{ms}[wd{j}]")
-        filtros.append("[narr]" + "".join(f"[wd{j}]" for j in range(k)) +
-                       f"amix=inputs={k + 1}:normalize=0:duration=first[mezcla]")
+            capas.append(f"[wd{j}]")
+        sig += 1
+    for j, ef in enumerate(sfx or []):
+        extra += ["-i", str(AUDIO / ef["archivo"])]
+        ms = max(0, int(float(ef["t"]) * 1000))
+        filtros.append(f"[{sig}:a]aformat=sample_rates=48000:channel_layouts=stereo,"
+                       f"volume={ef.get('vol', 0.8)},adelay={ms}|{ms}[sx{j}]")
+        capas.append(f"[sx{j}]")
+        sig += 1
+    if capas:
+        filtros.append("[narr]" + "".join(capas) +
+                       f"amix=inputs={len(capas) + 1}:normalize=0:duration=first[mezcla]")
         filtros.append("[mezcla]loudnorm=I=-14:TP=-1.5:LRA=11[aout]")
     else:
         filtros.append("[narr]loudnorm=I=-14:TP=-1.5:LRA=11[aout]")
@@ -244,6 +287,7 @@ if __name__ == "__main__":
         raise SystemExit("Uso: python3 montar.py <carpeta-del-short>")
     cargar(sys.argv[1])
     cfg = json.loads((AQUI / "escenas.json").read_text(encoding="utf-8"))
-    montar(cortes_rapidos=cfg.get("cortes_rapidos", False), whoosh=cfg.get("whoosh", False))
+    montar(cortes_rapidos=cfg.get("cortes_rapidos", False), whoosh=cfg.get("whoosh", False),
+           musica=cfg.get("musica"), sfx=cfg.get("sfx"))
     if cfg.get("outro"):
         agregar_outro()

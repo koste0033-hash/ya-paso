@@ -54,7 +54,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 | 27 | Robaron 5 toneladas de Nutella… de un solo camión | Alemania, 2013 | 🎬 |
 | 28 | Se disfrazaron de obreros… y se robaron un puente entero | Horní Slavkov, República Checa, 2012 | 🎬 |
 | 29 | Un error de escritura impidió el robo de casi mil millones de dólares | Banco Central de Bangladesh, 2016 | 🎬 |
-| 30 | Escondió 50 mil bitcoins robados… en una lata de palomitas | James Zhong, Georgia, 2012-2021 | |
+| 30 | Escondió 50 mil bitcoins robados… en una lata de palomitas | James Zhong, Georgia, 2012-2021 | 🎬 |
 | 31 | Lavaba miles de millones en bitcoins… y en sus ratos libres era rapera | Bitfinex, Nueva York, 2022 | |
 
 ## ❓ Sin resolver
