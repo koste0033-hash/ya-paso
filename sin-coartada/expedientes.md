@@ -29,6 +29,7 @@ Ejemplo: **¿Por qué creyó que el limón lo hacía invisible? | Expediente #00
 | #006 | D. B. Cooper (1971) | ¿Por qué el FBI nunca encontró a D. B. Cooper? | ❓ | 🔴 | ⏰ 24 nov, 8 am |
 | #007 | Ladrón de Facebook (2009) | ¿Por qué un ladrón revisó su Facebook en pleno robo? | 🔎 | 🟢 | ⏰ 24 nov, 6 pm |
 | #008 | País falso de Poyais (1820s) | ¿Por qué cientos de personas compraron tierras en un país que no existía? | 🔎 | 🟢 | ⏰ 25 nov, 8 am |
+| #009 | Puente robado, República Checa (2012) | ¿Cómo se robaron un puente entero frente a la policía? | 🤦 | 🟢 | ⏰ 25 nov, 6 pm |
 | — | Diamantes de Amberes (2003) | ¿Por qué una bolsa de basura arruinó el robo de diamantes más grande? | 🔎 | 🟡 | 📝 guion |
 | — | Gran robo del tren (1963) | ¿Por qué un juego de Monopoly delató a los ladrones del tren? | 🔎 | 🟢 | |
 | — | Cabeza de Pancho Villa (1926) | ¿Por qué nunca apareció la cabeza de Pancho Villa? | ❓ 🇲🇽 | 🟢 | |
