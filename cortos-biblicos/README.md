@@ -45,6 +45,20 @@ música y efectos de sonido.
 
 **Hashtags:** #Biblia #Daniel #FosoDeLosLeones #Fe #Oracion #HistoriasBiblicas #Shorts #Reels
 
+## Tercer corto: Moisés y el mar Rojo (30 s)
+
+`salida/moises_mar_rojo.mp4` (30 s), basado en Éxodo 14.
+
+**Título:** Detrás, un ejército… delante, el mar 🌊🙏 #Moisés #Biblia
+
+**Descripción:**
+> El pueblo de Israel estaba atrapado: el ejército de Faraón detrás y el mar delante. Moisés alzó
+> su vara, y Dios abrió el mar con un fuerte viento. ¡Cruzaron en seco! 🌊
+> «Jehová peleará por vosotros, y vosotros estaréis tranquilos.» — Éxodo 14:14
+> Cuando no veas salida, Dios abre un camino. Escribe AMÉN si lo crees. 🙏
+
+**Hashtags:** #Biblia #Moises #MarRojo #Fe #Dios #HistoriasBiblicas #Shorts #Reels
+
 ## Cómo crear un video
 
 Se necesita Python 3 con `numpy` y `Pillow`, y también `ffmpeg`.
