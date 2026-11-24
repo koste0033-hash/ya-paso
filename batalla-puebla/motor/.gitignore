@@ -1,4 +1,4 @@
 node_modules/
 out/
 salida/
-public/voz/*.wav
+build/

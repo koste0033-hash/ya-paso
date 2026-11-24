@@ -42,7 +42,7 @@ if exist "public\voz\voz.wav" (
   > "salida\props.json" echo {"voz":"voz/voz.wav"}
 ) else (
   echo Aviso: no hay voz en public\voz\voz.wav. El video saldra sin audio.
-  > "salida\props.json" echo {}
+  > "salida\props.json" echo {"mute":true}
 )
 
 rem --- 5. Render ---

@@ -11,7 +11,8 @@ import { World } from "./world";
 import { InkPass, noInkFallback } from "./ink";
 import { LensBlur } from "./lensblur";
 import { GradeEffect, GRADES, GRADE_STRENGTH, gradeFor } from "./grade";
-import { layersAt, dofAt, camAt, MARKS, smooth } from "./story";
+import { layersAt, dofAt, camAt, MARKS, smooth, SHOTS } from "./story";
+import { Panel } from "./panels";
 
 const makeBloom = () => {
   const b = new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: 0.5, luminanceThreshold: 1.0, luminanceSmoothing: 0.2, mipmapBlur: true, levels: 6, radius: 0.6 });
@@ -101,9 +102,11 @@ export const PueblaShort: React.FC = () => {
   const f = useCurrentFrame();
   return (
     <AbsoluteFill style={{ background: "#b48a6a" }}>
-      {layersAt(f).map((l) => <ShotView key={`shot${l.id}`} id={l.id} alpha={l.alpha} />)}
+      {layersAt(f).map((l) => SHOTS[l.id - 1].panel
+        ? <AbsoluteFill key={`shot${l.id}`} style={{ opacity: l.alpha }}><Panel kind={SHOTS[l.id - 1].panel!} f={f} /></AbsoluteFill>
+        : <ShotView key={`shot${l.id}`} id={l.id} alpha={l.alpha} />)}
       <Marks f={f} />
-      {(getInputProps() as { voz?: string }).voz && <Audio src={staticFile((getInputProps() as { voz: string }).voz)} />}
+      {!(getInputProps() as { mute?: boolean }).mute && <Audio src={staticFile((getInputProps() as { voz?: string }).voz ?? "voz/voz.wav")} />}
     </AbsoluteFill>
   );
 };

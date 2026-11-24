@@ -12,7 +12,7 @@ import { NOINK } from "./ink";
 import { LIGHTS, LOOK, LightPreset, WorldLook } from "./lights";
 import { TONE, CHAR, twoTone, untone } from "./shade";
 import { cloudHD, rep, ctex } from "./paint";
-import { FPS, SHOTS, camAt, smooth, gait, worldF, hillY, HILL, WALL, DEF_Z, WALL_TOP, SLIP } from "./story";
+import { FPS, SHOTS, camAt, smooth, gait, worldF, hillY, HILL, WALL, DEF_Z, WALL_TOP, SLIP, assault, VOLLEYS } from "./story";
 
 // ---------------- luz: mañana de batalla con humo (tomas 1-2) y tormenta de la tarde (toma 3) ----------------
 const BL: LightPreset = { ...LIGHTS.golden, el: 30, lit: [1.38, 1.05, 0.78], shade: [0.2, 0.19, 0.28], lift: [0.05, 0.05, 0.1],
@@ -97,6 +97,13 @@ const flagTex = () => ctex("banderaMX", 384, 256, (g) => {
   g.fillStyle = "#3f7a3a"; g.beginPath(); g.ellipse(192, 166, 34, 8, 0, 0, 6.3); g.fill();
 });
 
+/** bandera francesa (1863), 3:2 */
+const flagFR = () => ctex("banderaFR", 384, 256, (g) => {
+  g.fillStyle = "#1f3f95"; g.fillRect(0, 0, 128, 256);
+  g.fillStyle = "#f7f3ea"; g.fillRect(128, 0, 128, 256);
+  g.fillStyle = "#d0263a"; g.fillRect(256, 0, 128, 256);
+});
+
 // ---------------- lluvia: rayas que caen en una caja que rodea a la cámara ----------------
 const RAIN = { n: 9000, b: 26, h: 14 };
 const RAIN_VS = `
@@ -132,7 +139,7 @@ export class World {
   private fog = new THREE.Fog("#bccbec", 120, 1500);
   private clouds: THREE.Mesh[] = []; private stormClouds: THREE.Mesh[] = [];
   private army: Crowd; private garrison: Crowd;
-  private hillMat: THREE.MeshLambertMaterial; private flag: THREE.Mesh;
+  private hillMat: THREE.MeshLambertMaterial; private flag: THREE.Mesh; private flagMX!: THREE.Texture; private flagFR!: THREE.Texture;
   private rain = { uT: { value: 0 }, uCam: { value: new THREE.Vector3() }, uPx: { value: 1000 }, uFade: { value: 0 } };
   private sunCache = new Map<number, THREE.Vector3>();
   private frustum = new THREE.Frustum(); private m4 = new THREE.Matrix4(); private sph = new THREE.Sphere(); private v = new THREE.Vector3();
@@ -212,7 +219,8 @@ export class World {
       dome.position.set(-9, hillY(-9, 78) + 6, 78); R.add(dome);
       const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.1, 7, 8), lam({ color: "#5a4632" }));
       pole.position.set(7, WALL_TOP + 2.6, DEF_Z + 2.6); R.add(pole);
-      this.flag = new THREE.Mesh(new THREE.PlaneGeometry(2.7, 1.8, 12, 1), new THREE.MeshLambertMaterial({ map: flagTex(), side: THREE.DoubleSide }));
+      this.flagMX = flagTex(); this.flagFR = flagFR();
+      this.flag = new THREE.Mesh(new THREE.PlaneGeometry(2.7, 1.8, 12, 1), new THREE.MeshLambertMaterial({ map: this.flagMX, side: THREE.DoubleSide }));
       this.flag.position.set(7 + 1.38, WALL_TOP + 5.1, DEF_Z + 2.6); R.add(this.flag);
     }
     // volcanes nevados en el horizonte (Popocatépetl e Iztaccíhuatl se ven desde Puebla)
@@ -263,11 +271,11 @@ export class World {
   private shotSun(id: number) {
     let v = this.sunCache.get(id);
     if (v) return v;
-    const s = SHOTS[id - 1], L = s.rain ? STORM : BL;
+    const s = SHOTS[id - 1], L = s.storm ? STORM : BL;
     let fx = 0, fz = 0;
     for (let f = s.a; f < s.b; f += 3) { const c = camAt(id, f), x = c.look[0] - c.pos[0], z = c.look[2] - c.pos[2], n = Math.hypot(x, z) || 1; fx += x / n; fz += z / n; }
     const n = Math.hypot(fx, fz) || 1; fx /= n; fz /= n;
-    const az = THREE.MathUtils.degToRad(id === 1 ? 70 : id === 2 ? 115 : -60), el = THREE.MathUtils.degToRad(L.el);
+    const az = THREE.MathUtils.degToRad(s.storm ? -60 : s.climb ? 100 : id <= 6 ? 70 : 115), el = THREE.MathUtils.degToRad(L.el);
     const hx = fx * Math.cos(az) - fz * Math.sin(az), hz = fz * Math.cos(az) + fx * Math.sin(az);
     v = new THREE.Vector3(hx * Math.cos(el), Math.sin(el), hz * Math.cos(el)).normalize();
     this.sunCache.set(id, v);
@@ -277,7 +285,7 @@ export class World {
   private fx(i: number) { while (this.fxs.length <= i) this.fxs.push(new Fx(this.root)); return this.fxs[i]; }
 
   update(id: number, f: number, cam: THREE.PerspectiveCamera, scene: THREE.Scene) {
-    const S = SHOTS[id - 1], storm = !!S.rain;
+    const S = SHOTS[id - 1], storm = !!S.storm;
     const fw = worldF(f), t = fw / FPS, L = storm ? STORM : BL, K = storm ? STORMK : BK;
     const c = camAt(id, f);
     cam.position.set(...c.pos); cam.up.set(0, 1, 0); cam.lookAt(...c.look);
@@ -308,7 +316,10 @@ export class World {
     for (const m of this.clouds) { m.visible = !storm; m.quaternion.copy(cam.quaternion); }
     for (const m of this.stormClouds) { m.visible = storm; m.quaternion.copy(cam.quaternion); }
     this.hillMat.color.set(storm ? "#9a8c78" : "#ffffff"); // con la lluvia el cerro se vuelve lodo
-    this.rain.uT.value = t; this.rain.uCam.value.copy(cam.position); this.rain.uFade.value = storm ? 1 : 0;
+    this.rain.uT.value = t; this.rain.uCam.value.copy(cam.position); this.rain.uFade.value = S.rain ? 1 : 0;
+    // la retirada: el ejército se aleja; 1863: ondea la bandera francesa
+    this.army.shift.value.set(0, 0, S.retreat ? -3.2 * (f - S.a) / FPS : 0);
+    (this.flag.material as THREE.MeshLambertMaterial).map = S.francia1863 ? this.flagFR : this.flagMX;
     // la bandera ondea
     { const pos = (this.flag.geometry as THREE.BufferGeometry).attributes.position as THREE.BufferAttribute;
       for (let i = 0; i < pos.count; i++) { const x = pos.getX(i) + 1.35; pos.setZ(i, Math.sin(x * 2.2 - t * 7) * 0.18 * x / 2.7); }
@@ -341,45 +352,68 @@ export class World {
       if (d * scale < 80) { blob(st, sunDir, x - 1.0 * scale, 0, z, 1.6 * scale); blob(st, sunDir, x + 1.0 * scale, 0, z, 1.6 * scale); }
     };
 
-    if (id === 1) {
+    if (S.lorencez) {
       // Lorencez a caballo, confiado; su guardia alza los fusiles y grita cuando pasamos (la primera fila primero)
-      const rear = Math.round(16 * (smooth(f / 14) - smooth((f - 34) / 16)));
+      const rear = Math.round(16 * (smooth((f - S.a) / 14) - smooth((f - S.a - 34) / 16)));
       const ao = { expr: "grin" as Expr, light, seed: 3, blink: lidAt(1), look: 0, prop: ["sword", 0.2] as ["sword", number] };
       side(`lorencez|${rear}|${JSON.stringify(ao)}`, 0, 0, 1, (p) => { horseFront(p, HORSE, 1000, () => rideFront(p, LORENCEZ, 1000, rear, ao, 1.1, false), rear, -1); }, 0);
-      for (const s of GUARD) {
-        const r0 = 6 + ((-3.2 - s.z) / 1.25) * 2.2 + hh(s.i, 21) * 7;
+      if (S.guard) for (const s of GUARD) {
+        const r0 = (S.raiseAt ?? 1e9) + ((-3.2 - s.z) / 1.25) * 2.2 + hh(s.i, 21) * 7;
         const upk = Math.round(6 * smooth((f - r0) / 9)) / 6;
         person(`f${s.v}`, french(s.v), s.x, 0, s.z, { mode: "stand", expr: upk > 0.5 ? "shout" : s.i % 3 === 0 ? "neutral" : "stern", facing: 0, raise: upk }, s.i + 10);
       }
     }
     // Zaragoza y los defensores en el muro (se ven en las tomas 2 y 3)
-    if (id >= 2) {
-      const zo = { mode: "stand" as const, expr: "stern" as Expr, facing: 0 as const, prop: ["sword", f > 160 && id === 2 ? 0 : 0.6] as ["sword", number] };
-      person("zaragoza", ZARAGOZA, 0, hillY(0, DEF_Z), DEF_Z, zo, 1, false);
+    if (S.defenders) {
+      if (S.zaragoza) {
+        const raised = S.raiseAt !== undefined && f > S.raiseAt;
+        const ze: Expr = S.grinAt !== undefined && f >= S.grinAt ? "grin" : raised ? "shout" : "stern";
+        const zo = { mode: "stand" as const, expr: ze, facing: 0 as const, prop: ["sword", raised ? 0 : 0.6] as ["sword", number] };
+        person("zaragoza", ZARAGOZA, 0, hillY(0, DEF_Z), DEF_Z, zo, 1, false);
+      }
       for (const d of DEFENDERS) {
-        const r0 = 150 + Math.abs(d.x) * 1.2 + hh(d.i, 22) * 6;
-        const upk = id === 2 ? Math.round(6 * smooth((f - r0) / 9)) / 6 : 0.4 + 0.4 * Math.sin(t * 3 + d.i);
-        person(`mx${d.v}`, mexican(d.v), d.x, hillY(d.x, d.z), d.z, { mode: "stand", expr: upk > 0.5 ? "shout" : "stern", facing: 0, raise: upk }, d.i + 2000, false);
+        if (S.francia1863 && d.row === 0 && Math.abs(d.x) < 0.9) continue;
+        const r0 = (S.raiseAt ?? 1e9) + Math.abs(d.x) * 1.2 + hh(d.i, 22) * 6;
+        const upk = S.raiseAt !== undefined ? Math.round(6 * smooth((f - r0) / 9)) / 6 : S.climb || S.rain ? 0.4 + 0.4 * Math.sin(t * 3 + d.i) : 0;
+        const o = S.francia1863 ? french(d.v) : mexican(d.v);
+        person(`${S.francia1863 ? "fr" : "mx"}${d.v}`, o, d.x, hillY(d.x, d.z), d.z, { mode: "stand", expr: upk > 0.5 ? "shout" : "stern", facing: 0, raise: upk }, d.i + 2000, false);
       }
     }
-    if (id === 3) {
+    if (S.climb === "lluvia") {
       // los franceses suben resbalando; uno se cae en cámara lenta
       for (const q of CLIMB) {
         const slide = q.slip ? 0.6 * (1 - Math.cos(t * 2 + q.i)) : 0, z = q.z - slide;
         person(`fc${q.v}|${q.slip}`, french(q.v), q.x, hillY(q.x, z), z,
           q.slip ? { mode: "fall", expr: "shock", facing: 0 } : { mode: "march", phase: gait(t, 0.55), expr: "nervous", facing: 0, lift: 30 }, q.i + 3000);
       }
-      const k = smooth((f - 256) / 26), z = SLIP.z - 1.4 * k;
+      const k = smooth((f - (S.slipAt ?? 0)) / 26), z = SLIP.z - 1.4 * k;
       person("slip", french(2), SLIP.x, hillY(SLIP.x, z) + 0.25 * Math.sin(Math.PI * k), z,
         k < 0.15 ? { mode: "march", phase: gait(t, 0.55), expr: "nervous", facing: 0, lift: 30 } : { mode: "fall", expr: "shock", facing: 0, tilt: -0.5 * k }, 7);
     }
+    if (S.climb === "sol") {
+      // los tres asaltos: la columna sube, la rechazan, vuelve a subir
+      const up = assault(f), back = up < assault(f - 1);
+      for (const q of CLIMB) {
+        const z = 30 + (q.z - 41) + up * 16 + (hh(q.i, 30) - 0.5) * 1.5;
+        person(`fs${q.v}|${back}`, french(q.v), q.x, hillY(q.x, z), z,
+          back ? { mode: "march", phase: gait(t + q.i * 0.1, 1.2), expr: "shock", facing: 0, lift: 30 } : { mode: "march", phase: gait(t + q.i * 0.1, 0.9), expr: "stern", facing: 0, lift: 40, raise: 1 }, q.i + 3000);
+      }
+    }
 
     // el campo de batalla
-    if (id === 3) for (const b of FALLEN) {
+    if (S.fallen) for (const b of FALLEN) {
       const o = french(b.v);
       st.fx.push({ key: `caido|${b.v % 6}`, cw: 300, ch: 500, draw: (p) => { p.g.scale(0.5, 0.5); bodyFront(p, o, { mode: "fall", expr: "dazed", light: LIGHT, seed: (b.v % 7) + 1 }); }, x: b.x, y: hillY(b.x, b.z) + 0.03, z: b.z, w: 1.3, h: 2.16, flat: true, rot: b.rot });
     }
-    if (id === 3) for (const m of MUD) st.fx.push({ key: "lodo", cw: 256, ch: 256, draw: mudDraw, x: m.x, y: hillY(m.x, m.z) + 0.05, z: m.z, w: m.w, h: m.w * 0.8, flat: true, rot: m.rot, soft: true });
+    if (S.rain) for (const m of MUD) st.fx.push({ key: "lodo", cw: 256, ch: 256, draw: mudDraw, x: m.x, y: hillY(m.x, m.z) + 0.05, z: m.z, w: m.w, h: m.w * 0.8, flat: true, rot: m.rot, soft: true });
+    if (S.climb === "sol") for (const v of VOLLEYS) {
+      const u = (f - v) / 40;
+      if (u < 0 || u > 1) continue;
+      for (let k = 0; k < 9; k++) {
+        const x = -20 + k * 5, y0 = WALL_TOP + 0.6, sz = 1.5 + u * 6;
+        st.fx.push({ key: "humo", cw: 256, ch: 256, draw: smokeDraw, x: x - u * 2, y: y0 + u * 2.5, z: WALL.z - 1.5 - u * 2, w: sz, h: sz, soft: true });
+      }
+    }
     for (const sm of SMOKE) for (let k = 0; k < 5; k++) {
       const u = (t * 0.09 + k / 5 + sm.i * 0.13) % 1, sz = 3 + u * 12, y0 = hillY(sm.x, sm.z) + 1.5;
       if (cam.position.distanceTo(this.v.set(sm.x - u * 10, y0 + u * 22, sm.z + u * 3)) < sz * 1.6) continue;
