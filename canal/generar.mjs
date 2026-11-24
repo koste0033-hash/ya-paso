@@ -47,9 +47,23 @@ const banner = `<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="144
   <text x="1380" y="868" font-family="DejaVu Sans" font-weight="700" font-size="42" fill="#ffd23f" stroke="${INK}" stroke-width="8" paint-order="stroke" text-anchor="middle">Casos OVNI de Latinoamérica en 1 minuto 👽</text>
 </svg>`;
 
+
+// portada de Facebook 1640x624 (lo importante, centrado, para que no se corte en celular)
+const portada = `<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="624" viewBox="0 0 1640 624">
+  ${fondo(1640, 624)}
+  <path d="M 0 470 Q 410 430 820 465 Q 1230 500 1640 455 L 1640 624 L 0 624 Z" fill="#14213f"/>
+  <path d="M 470 230 L 390 480 L 610 480 L 540 230 Z" fill="#b6fff0" opacity="0.2"/>
+  ${ovni(505, 200, 0.5)}
+  ${monito(500, 470, 0.55)}
+  ${ovni(1330, 150, 0.3)}
+  <text x="960" y="270" font-family="DejaVu Sans" font-weight="900" font-size="84" fill="#ffffff" stroke="${INK}" stroke-width="12" paint-order="stroke" text-anchor="middle">EXPEDIENTE</text>
+  <text x="960" y="360" font-family="DejaVu Sans" font-weight="900" font-size="84" fill="#7dffb2" stroke="${INK}" stroke-width="12" paint-order="stroke" text-anchor="middle">OVNI MONITO</text>
+  <text x="960" y="418" font-family="DejaVu Sans" font-weight="700" font-size="34" fill="#ffd23f" stroke="${INK}" stroke-width="7" paint-order="stroke" text-anchor="middle">Casos OVNI de Latinoamérica en 1 minuto 👽</text>
+</svg>`;
+
 const browser = await chromium.launch();
 const page = await browser.newPage({deviceScaleFactor: 1});
-for (const [name, svg, w, h] of [['perfil', perfil, 800, 800], ['banner', banner, 2560, 1440]]) {
+for (const [name, svg, w, h] of [['perfil', perfil, 800, 800], ['banner', banner, 2560, 1440], ['portada_facebook', portada, 1640, 624]]) {
   await page.setViewportSize({width: w, height: h});
   await page.setContent(`<html><body style="margin:0">${svg}</body></html>`);
   await page.screenshot({path: `${process.argv[2]}/${name}.png`, clip: {x: 0, y: 0, width: w, height: h}});
