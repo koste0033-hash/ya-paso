@@ -1,12 +1,12 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Easing, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Easing, interpolate, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {PALABRAS} from './palabras';
 
 // ---------- Tiempo ----------
 export const FPS = 30;
 const SPEED = 1.3; // la voz se aceleró 1.3x
 export const F = (t: number) => Math.round((t / SPEED) * FPS); // segundos de la voz original -> cuadro
-export const DURACION = F(62.3) + 18;
+export const DURACION = F(62.3) + 18 + 66; // + botón de suscríbete
 
 const ip = (f: number, a: number, b: number, c: number, d: number, ease = Easing.inOut(Easing.cubic)) =>
   interpolate(f, [a, b], [c, d], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease});
@@ -867,6 +867,42 @@ const Subtitulos: React.FC<{g: number; y: number}> = ({g, y}) => {
   );
 };
 
+
+// ---------- Cierre: botón de SUSCRÍBETE ----------
+const EXTRA = 66; // cuadros extra al final para el botón
+const Suscribete: React.FC<{g: number; total: number}> = ({g, total}) => {
+  const f = g - (total - EXTRA - 6);
+  if (f < 0) return null;
+  const entra = spring({frame: f, fps: FPS, config: {damping: 11}});
+  const clic = 26; // cuadro del clic
+  const hecho = f >= clic;
+  const mano = interpolate(f, [6, clic - 2], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const aprieta = f >= clic - 2 && f < clic + 3 ? 0.92 : 1;
+  const campana = hecho ? Math.sin((f - clic) * 0.9) * 18 * Math.max(0, 1 - (f - clic) / 24) : 0;
+  return (
+    <AbsoluteFill style={{backgroundColor: `rgba(10,12,30,${0.55 * entra})`}}>
+      <svg width={1080} height={1920} viewBox="0 0 1080 1920">
+        <g transform={`translate(540,1290) scale(${entra})`}>
+          <text y={0} fontSize={58} fontWeight={900} textAnchor="middle" fill="#7dffb2" stroke={INK} strokeWidth={10} paintOrder="stroke" fontFamily="DejaVu Sans">👽 EXPEDIENTE OVNI MONITO</text>
+        </g>
+        <g transform={`translate(540,1460) scale(${entra * aprieta})`}>
+          <rect x={-330} y={-95} width={660} height={190} rx={95} fill={hecho ? '#9aa0a6' : '#e62117'} stroke={INK} strokeWidth={10} />
+          <text x={-40} y={30} fontSize={76} fontWeight={900} textAnchor="middle" fill="#fff" fontFamily="DejaVu Sans">{hecho ? 'SUSCRITO' : 'SUSCRÍBETE'}</text>
+          <g transform={`translate(240,0) rotate(${campana})`}>
+            <path d="M -38 22 Q -40 -40 0 -46 Q 40 -40 38 22 L 48 34 L -48 34 Z" fill="#ffd23f" stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+            <circle cx={0} cy={44} r={10} fill="#ffd23f" stroke={INK} strokeWidth={5} />
+          </g>
+        </g>
+        {f > 4 && (
+          <g transform={`translate(${600 + 300 * mano},${1540 + 300 * mano}) scale(${aprieta})`} opacity={f > clic + 18 ? Math.max(0, 1 - (f - clic - 18) / 8) : 1}>
+            <path d="M 0 0 L 0 -90 Q 0 -110 20 -110 Q 40 -110 40 -90 L 40 -40 L 90 -30 Q 115 -24 112 0 L 100 70 Q 96 92 72 92 L 20 92 Q 0 92 -10 76 L -46 18 Q -56 0 -38 -8 Q -20 -14 0 0 Z" fill="#ffe2c2" stroke={INK} strokeWidth={8} strokeLinejoin="round" />
+          </g>
+        )}
+      </svg>
+    </AbsoluteFill>
+  );
+};
+
 export const Video: React.FC = () => {
   const g = useCurrentFrame();
   const {durationInFrames} = useVideoConfig();
@@ -882,6 +918,7 @@ export const Video: React.FC = () => {
   return (
     <AbsoluteFill style={{backgroundColor: '#000'}}>
       <Audio src={staticFile('voz.wav')} />
+      <Sequence from={durationInFrames - 66 - 6 + 26}><Audio src={staticFile('ding.wav')} /></Sequence>
       <AbsoluteFill style={{transform: `scale(${pop})`}}>
         {esc.svg === false ? (
           <C f={f} g={g} dur={end - start} />
@@ -892,6 +929,7 @@ export const Video: React.FC = () => {
         )}
       </AbsoluteFill>
       <Subtitulos g={g} y={esc.sub ?? 1430} />
+      <Suscribete g={g} total={durationInFrames} />
     </AbsoluteFill>
   );
 };
