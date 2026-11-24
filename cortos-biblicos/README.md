@@ -31,6 +31,20 @@ música y efectos de sonido.
 
 **Hashtags:** #Biblia #DavidYGoliat #Dios #Fe #HistoriasBiblicas #Cristianos #Shorts #Reels
 
+## Segundo corto: Daniel en el foso de los leones
+
+`salida/daniel_leones.mp4` (49 s), basado en Daniel 6.
+
+**Título:** Lo echaron a los leones… ¡por orar! 🦁🙏 #Daniel #Biblia
+
+**Descripción:**
+> El rey prohibió orar a Dios durante 30 días. Daniel abrió su ventana y siguió orando 3 veces
+> al día, como siempre… y lo arrojaron al foso de los leones. 😱
+> «Mi Dios envió su ángel, el cual cerró la boca de los leones.» — Daniel 6:22
+> Si Dios cerró la boca de los leones, puede cuidarte a ti. Escribe AMÉN si lo crees. 🙏
+
+**Hashtags:** #Biblia #Daniel #FosoDeLosLeones #Fe #Oracion #HistoriasBiblicas #Shorts #Reels
+
 ## Cómo crear un video
 
 Se necesita Python 3 con `numpy` y `Pillow`, y también `ffmpeg`.
