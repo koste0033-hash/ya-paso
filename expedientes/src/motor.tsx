@@ -619,7 +619,7 @@ export const prepararEpisodio = (def: EpisodioDef, voz: {speed: number; palabras
     return out;
   });
   const ultimo = fr(ws[ws.length - 1].end);
-  return {def, voz, fr, beats, duracion: ultimo + 18 + EXTRA};
+  return {def, voz, fr, beats, duracion: Math.max(ultimo + 18 + EXTRA, 1500)};
 };
 
 // ---------- piezas nuevas ----------
