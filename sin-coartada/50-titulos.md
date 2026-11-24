@@ -61,7 +61,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 
 | # | Título | Caso | Estado |
 |---|---|---|---|
-| 32 | Secuestró un avión, pidió 200 mil dólares y saltó en paracaídas… nunca lo encontraron | D. B. Cooper, Estados Unidos, 1971 | 🎬 |
+| 32 | Secuestró un avión, pidió 200 mil dólares y saltó en paracaídas… nunca lo encontraron | D. B. Cooper, Estados Unidos, 1971 | ✅ |
 | 33 | Dejaron cabezas falsas en sus camas y escaparon de Alcatraz… ¿llegaron vivos? | Fuga de Alcatraz, 1962 | |
 | 34 | Le robaron la cabeza a Pancho Villa… y nunca apareció | Parral, Chihuahua, 1926 | 🎬 |
 | 35 | Un hombre apareció en una playa con un papelito que decía "Tamam Shud"… y tardaron 74 años en saber quién era | El hombre de Somerton, Australia, 1948 | |
