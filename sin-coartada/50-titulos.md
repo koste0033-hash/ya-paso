@@ -19,7 +19,7 @@ Estado: ✅ publicado · 🎬 video listo para subir · 📝 guion listo · (vac
 | 2 | Dejaron una nota en la bóveda: "sin armas ni rencores"… y escaparon por las alcantarillas | Banco Río de Acassuso, Argentina, 2006 | ✅ |
 | 3 | Abrieron una tienda de pasto artificial… para cavar un túnel hasta el banco | Banco Central de Fortaleza, Brasil, 2005 | |
 | 4 | Robaron 100 millones en diamantes… y los delató una bolsa de basura | Centro de Diamantes de Amberes, Bélgica, 2003 | 🎬 |
-| 5 | Se robaron más de 100 piezas del Museo de Antropología en Navidad… y eran dos estudiantes | Museo Nacional de Antropología, CDMX, 1985 | 🎬 |
+| 5 | Se robaron más de 100 piezas del Museo de Antropología en Navidad… y eran dos estudiantes | Museo Nacional de Antropología, CDMX, 1985 | ✅ |
 | 6 | Se robaron la Mona Lisa… y la tuvieron dos años escondida en un cuarto | Museo del Louvre, 1911 | 🎬 |
 | 7 | Se disfrazaron de policías, entraron a un museo… y los marcos vacíos siguen colgados | Museo Isabella Stewart Gardner, Boston, 1990 | |
 | 8 | Una banda de jubilados perforó una bóveda… en el fin de semana de Pascua | Hatton Garden, Londres, 2015 | |

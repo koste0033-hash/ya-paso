@@ -25,7 +25,7 @@ Ejemplo: **¿Por qué creyó que el limón lo hacía invisible? | Expediente #00
 | #002 | Victor Lustig, Torre Eiffel (1925) | ¿Por qué un estafador pudo vender la Torre Eiffel dos veces? | 🔎 | 🟢 | ✅ publicado |
 | #003 | 5 toneladas de Nutella (2013) | ¿Por qué alguien se robaría 5 toneladas de Nutella? | ❓ | 🟡 | ✅ publicado |
 | #004 | Banco Río, Acassuso (2006) | ¿Por qué con pistolas de juguete? | 🔎 | 🔴 | ✅ publicado ([YouTube](https://youtube.com/shorts/NlNZoy8SYEM)) |
-| #005 | Museo Nacional de Antropología (1985) | ¿Por qué dos estudiantes pudieron robar el Museo de Antropología? | 🔎 🇲🇽 | 🟢 | ⏰ 23 nov, 6 pm |
+| #005 | Museo Nacional de Antropología (1985) | ¿Por qué dos estudiantes pudieron robar el Museo de Antropología? | 🔎 🇲🇽 | 🟢 | ✅ publicado (YouTube subido a mano) |
 | #006 | D. B. Cooper (1971) | ¿Por qué el FBI nunca encontró a D. B. Cooper? | ❓ | 🔴 | ⏰ 24 nov, 8 am |
 | #007 | Ladrón de Facebook (2009) | ¿Por qué un ladrón revisó su Facebook en pleno robo? | 🔎 | 🟢 | ⏰ 24 nov, 6 pm |
 | #008 | País falso de Poyais (1820s) | ¿Por qué cientos de personas compraron tierras en un país que no existía? | 🔎 | 🟢 | ⏰ 25 nov, 8 am |
