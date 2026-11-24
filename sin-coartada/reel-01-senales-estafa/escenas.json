@@ -1,0 +1,51 @@
+{
+  "fin": 17.02,
+  "cortes_rapidos": true,
+  "whoosh": true,
+  "outro": false,
+  "musica": "musica-suspenso.mp3",
+  "sfx": [
+    {
+      "archivo": "sfx-golpe.mp3",
+      "t": 2.9,
+      "vol": 0.6
+    },
+    {
+      "archivo": "sfx-golpe.mp3",
+      "t": 7.73,
+      "vol": 0.6
+    },
+    {
+      "archivo": "sfx-golpe.mp3",
+      "t": 10.37,
+      "vol": 0.6
+    }
+  ],
+  "escenas": [
+    {
+      "img": "e1.png",
+      "inicio": 0.0,
+      "movimiento": "zoom_in_fuerte"
+    },
+    {
+      "img": "e2.png",
+      "inicio": 2.8,
+      "movimiento": "zoom_in"
+    },
+    {
+      "img": "e3.png",
+      "inicio": 7.63,
+      "movimiento": "sacudida"
+    },
+    {
+      "img": "e4.png",
+      "inicio": 10.27,
+      "movimiento": "zoom_in"
+    },
+    {
+      "img": "e5.png",
+      "inicio": 13.49,
+      "movimiento": "zoom_in"
+    }
+  ]
+}
