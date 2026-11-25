@@ -27,7 +27,7 @@ Ejemplo: **¿Por qué creyó que el limón lo hacía invisible? | Expediente #00
 | #004 | Banco Río, Acassuso (2006) | ¿Por qué con pistolas de juguete? | 🔎 | 🔴 | ✅ publicado ([YouTube](https://youtube.com/shorts/NlNZoy8SYEM)) |
 | #005 | Museo Nacional de Antropología (1985) | ¿Por qué dos estudiantes pudieron robar el Museo de Antropología? | 🔎 🇲🇽 | 🟢 | ✅ publicado (YouTube subido a mano) |
 | #006 | D. B. Cooper (1971) | ¿Por qué el FBI nunca encontró a D. B. Cooper? | ❓ | 🔴 | ✅ publicado ([YouTube](https://youtube.com/shorts/XJ-qKaABKM0)) |
-| #007 | Ladrón de Facebook (2009) | ¿Por qué un ladrón revisó su Facebook en pleno robo? | 🔎 | 🟢 | ⏰ 24 nov, 6 pm |
+| #007 | Ladrón de Facebook (2009) | ¿Por qué un ladrón revisó su Facebook en pleno robo? | 🔎 | 🟢 | ✅ publicado (YouTube subido a mano) |
 | #008 | País falso de Poyais (1820s) | ¿Por qué cientos de personas compraron tierras en un país que no existía? | 🔎 | 🟢 | ⏰ 25 nov, 12 pm |
 | #009 | Puente robado, República Checa (2012) | ¿Cómo se robaron un puente entero frente a la policía? | 🤦 | 🟢 | ⏰ 25 nov, 6 pm |
 | #010 | Banco de Bangladesh (2016) | ¿Por qué un error de ortografía salvó cientos de millones? | ❓ | 🟡 | ⏰ 26 nov, 12 pm |
